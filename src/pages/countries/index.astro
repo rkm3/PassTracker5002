@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const skiAreas = await getCollection('ski-areas');
+
+// Get unique countries
+const countries = [...new Set(skiAreas.map(area => area.data.country))].sort();
+
+// Count ski areas per country
+const countryCounts = new Map<string, number>();
+skiAreas.forEach(area => {
+  const country = area.data.country;
+  countryCounts.set(country, (countryCounts.get(country) || 0) + 1);
+});
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<Layout title="Ski Areas by Country">
+	<div class="max-w-4xl mx-auto">
+		<nav class="mb-8">
+			<a href={`${baseUrl}/`} class="text-blue-600 hover:underline">← Back to All Ski Areas</a>
+		</nav>
+
+		<h1 class="text-4xl font-bold mb-8">Ski Areas by Country</h1>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			{countries.map(country => {
+				const count = countryCounts.get(country) || 0;
+				return (
+					<div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+						<a href={`${baseUrl}/countries/${country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}`} class="block">
+							<h2 class="text-2xl font-bold mb-2">{country}</h2>
+							<p class="text-gray-600">{count} ski area{count !== 1 ? 's' : ''}</p>
+						</a>
+					</div>
+				);
+			})}
+		</div>
+	</div>
+</Layout>
