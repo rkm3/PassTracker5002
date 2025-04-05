@@ -20,6 +20,15 @@ const baseUrl = import.meta.env.BASE_URL;
 <Layout title="Storm Skiing - Pass Tracker 5002">
 	<h1 class="text-4xl font-bold mb-8">Pass Tracker 5002</h1>
 
+	<div class="flex gap-4 mb-8">
+		<a href={`${baseUrl}/countries`} class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
+			View by Country
+		</a>
+		<a href={`${baseUrl}/ski-areas/usa`} class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
+			View US Ski Areas
+		</a>
+	</div>
+
 	<div class="overflow-x-auto">
 		<table class="min-w-full bg-white border border-gray-300">
 			<thead>
