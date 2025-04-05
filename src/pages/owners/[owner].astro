@@ -19,6 +19,25 @@ const { owner } = Astro.props;
 const { Content } = await owner.render();
 
 const skiAreas = await getCollection('ski-areas');
+const passFamilies = await getCollection('pass-families');
+
+// Create a mapping for pass family names
+const passFamilySlugs = new Map();
+passFamilies.forEach(passFamily => {
+	const passFamilyName = passFamily.data.name;
+	const passFamilySlug = passFamily.slug;
+
+	// Store the exact name
+	passFamilySlugs.set(passFamilyName, passFamilySlug);
+
+	// Store lowercase version
+	passFamilySlugs.set(passFamilyName.toLowerCase(), passFamilySlug);
+
+	// Store first word only (for cases like "Indy Pass" vs "Indy")
+	const firstWord = passFamilyName.split(' ')[0];
+	passFamilySlugs.set(firstWord, passFamilySlug);
+	passFamilySlugs.set(firstWord.toLowerCase(), passFamilySlug);
+});
 
 // Filter ski areas owned by this owner, using robust matching
 const ownedSkiAreas = skiAreas.filter((area) => {
@@ -57,6 +76,66 @@ ownedSkiAreas.forEach((area) => {
 });
 
 const baseUrl = import.meta.env.BASE_URL;
+
+// Function to process pass affiliations
+function processPassAffiliations(affiliationsString: string | undefined): string {
+	if (!affiliationsString) return '<span class="text-gray-400">—</span>';
+
+	const affiliations = affiliationsString.split(',').map(aff => aff.trim());
+	return affiliations.map(affiliation => {
+		// Try to find a matching pass family
+		let passFamilySlug = null;
+
+		// Try exact match
+		passFamilySlug = passFamilySlugs.get(affiliation);
+
+		// Try lowercase match
+		if (!passFamilySlug) {
+			passFamilySlug = passFamilySlugs.get(affiliation.toLowerCase());
+		}
+
+		// Try first word match
+		if (!passFamilySlug) {
+			const firstWord = affiliation.split(' ')[0];
+			passFamilySlug = passFamilySlugs.get(firstWord);
+		}
+
+		// Try first word lowercase match
+		if (!passFamilySlug) {
+			const firstWord = affiliation.split(' ')[0].toLowerCase();
+			passFamilySlug = passFamilySlugs.get(firstWord);
+		}
+
+		// Special cases
+		if (!passFamilySlug) {
+			if (affiliation.includes('Epic')) {
+				passFamilySlug = passFamilySlugs.get('Epic');
+			} else if (affiliation.includes('Ikon')) {
+				passFamilySlug = passFamilySlugs.get('Ikon');
+			} else if (affiliation.includes('Indy')) {
+				passFamilySlug = passFamilySlugs.get('Indy');
+			} else if (affiliation.includes('Mountain Collective')) {
+				passFamilySlug = passFamilySlugs.get('Mountain Collective');
+			} else if (affiliation.includes('Powder Alliance')) {
+				passFamilySlug = passFamilySlugs.get('Powder Alliance');
+			} else if (affiliation.includes('Freedom')) {
+				passFamilySlug = passFamilySlugs.get('Freedom');
+			} else if (affiliation.includes('Power')) {
+				passFamilySlug = passFamilySlugs.get('Power');
+			} else if (affiliation.includes('New England Pass')) {
+				passFamilySlug = passFamilySlugs.get('New England Pass');
+			} else if (affiliation.includes('Uphill New England')) {
+				passFamilySlug = passFamilySlugs.get('Uphill New England');
+			}
+		}
+
+		if (passFamilySlug) {
+			return `<a href="${baseUrl}/pass-families/${passFamilySlug}" class="text-blue-600 hover:underline">${affiliation}</a>`;
+		} else {
+			return affiliation;
+		}
+	}).join(', ');
+}
 ---
 
 <Layout title={`${owner.data.name} - Storm Skiing Pass Tracker 5002`}>
@@ -145,7 +224,7 @@ const baseUrl = import.meta.env.BASE_URL;
 									</td>
 									<td class="px-4 py-2 border-b text-right">{area.data.verticalDrop || 'N/A'}</td>
 									<td class="px-4 py-2 border-b text-right">{area.data.skiableAcres || 'N/A'}</td>
-									<td class="px-4 py-2 border-b">{area.data.passAffiliations || 'None'}</td>
+									<td class="px-4 py-2 border-b" set:html={processPassAffiliations(area.data.passAffiliations)}></td>
 								</tr>
 							))}
 						</tbody>

@@ -1,6 +1,6 @@
 ---
 name: "Mountain Capital Partners"
-website: "https://www.mcpresorts.com"
+website: "https://mcp.ski"
 description: "Mountain Capital Partners (MCP) is a ski resort operator that owns and manages several ski areas in the western United States. The company focuses on smaller, community-oriented ski areas and has been growing through acquisitions since its founding."
 logo: "/images/owners/mcp-logo.png"
 ---

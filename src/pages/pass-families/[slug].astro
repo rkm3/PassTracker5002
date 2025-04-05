@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+	const passFamilies = await getCollection('pass-families');
+	return passFamilies.map(passFamily => ({
+		params: { slug: passFamily.slug },
+		props: { passFamily },
+	}));
+}
+
+interface Props {
+	passFamily: CollectionEntry<'pass-families'>;
+}
+
+const { passFamily } = Astro.props;
+const { Content } = await passFamily.render();
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<Layout title={`${passFamily.data.name} - Pass Tracker 5002`}>
+	<div class="max-w-4xl mx-auto">
+		<div class="flex gap-4 mb-8">
+			<a href={`${baseUrl}/pass-families`} class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
+				Back to Pass Families
+			</a>
+		</div>
+
+		<article class="prose lg:prose-xl">
+			{passFamily.data.logo && (
+				<div class="mb-8">
+					<img src={passFamily.data.logo} alt={`${passFamily.data.name} logo`} class="max-h-40 mx-auto" />
+				</div>
+			)}
+
+			<h1>{passFamily.data.name}</h1>
+
+			{passFamily.data.website && (
+				<p>
+					<a href={passFamily.data.website} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+						Visit Website
+					</a>
+				</p>
+			)}
+
+			<Content />
+		</article>
+	</div>
+</Layout>

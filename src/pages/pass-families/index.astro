@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const passFamilies = await getCollection('pass-families');
+passFamilies.sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<Layout title="Pass Families - Pass Tracker 5002">
+	<h1 class="text-4xl font-bold mb-8">Pass Families</h1>
+
+	<div class="flex gap-4 mb-8">
+		<a href={`${baseUrl}`} class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
+			Back to Home
+		</a>
+	</div>
+
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+		{passFamilies.map((passFamily) => (
+			<div class="bg-white border border-gray-300 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+				{passFamily.data.logo && (
+					<div class="h-40 bg-gray-100 flex items-center justify-center p-4">
+						<img src={passFamily.data.logo} alt={`${passFamily.data.name} logo`} class="max-h-full max-w-full object-contain" />
+					</div>
+				)}
+				<div class="p-4">
+					<h2 class="text-xl font-bold mb-2">
+						<a href={`${baseUrl}/pass-families/${passFamily.slug}`} class="text-blue-600 hover:underline">
+							{passFamily.data.name}
+						</a>
+					</h2>
+					<p class="text-gray-700 mb-4">{passFamily.data.description}</p>
+					{passFamily.data.website && (
+						<a href={passFamily.data.website} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+							Visit Website
+						</a>
+					)}
+				</div>
+			</div>
+		))}
+	</div>
+</Layout>
