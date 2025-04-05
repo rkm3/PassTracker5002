@@ -1,0 +1,13 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+# Package manager pnpm
+
+Use pnpm to install libraries.
+
+This is an Astro project with a goal of making markdown files with frontmatter yaml for the key parameters.
+
+It's a knowledge base for ski areas and passes.
