@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const owners = await getCollection('owners');
+owners.sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<Layout title="Ski Area Owners">
+	<div class="max-w-4xl mx-auto">
+		<nav class="mb-8">
+			<a href={`${baseUrl}/`} class="text-blue-600 hover:underline">← Back to Home</a>
+		</nav>
+
+		<h1 class="text-4xl font-bold mb-8">Ski Area Owners</h1>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			{owners.map((owner) => (
+				<div class="border border-gray-300 rounded-lg p-6 hover:shadow-md transition-shadow">
+					<div class="flex items-center mb-4">
+						{owner.data.logo && (
+							<img
+								src={owner.data.logo}
+								alt={`${owner.data.name} logo`}
+								class="h-12 w-auto mr-4"
+							/>
+						)}
+						<h2 class="text-2xl font-bold">
+							<a
+								href={`${baseUrl}/owners/${owner.slug}`}
+								class="text-blue-600 hover:underline"
+							>
+								{owner.data.name}
+							</a>
+						</h2>
+					</div>
+					<p class="text-gray-700 mb-4">{owner.data.description}</p>
+					{owner.data.website && (
+						<a
+							href={owner.data.website}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-blue-600 hover:underline"
+						>
+							Visit Website
+						</a>
+					)}
+				</div>
+			))}
+		</div>
+	</div>
+</Layout>

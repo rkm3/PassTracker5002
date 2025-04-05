@@ -20,6 +20,17 @@ const skiAreas = defineCollection({
 	}),
 });
 
+const owners = defineCollection({
+	type: 'content',
+	schema: z.object({
+		name: z.string(),
+		website: z.string().optional(),
+		description: z.string().optional(),
+		logo: z.string().optional(),
+	}),
+});
+
 export const collections = {
 	'ski-areas': skiAreas,
+	'owners': owners,
 };

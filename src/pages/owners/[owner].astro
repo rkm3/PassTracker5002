@@ -1,0 +1,157 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+	const owners = await getCollection('owners');
+	return owners.map((owner) => ({
+		params: { owner: owner.slug },
+		props: { owner },
+	}));
+}
+
+interface Props {
+	owner: CollectionEntry<'owners'>;
+}
+
+const { owner } = Astro.props;
+const { Content } = await owner.render();
+
+const skiAreas = await getCollection('ski-areas');
+
+// Filter ski areas owned by this owner, using robust matching
+const ownedSkiAreas = skiAreas.filter((area) => {
+	if (!area.data.owner) return false;
+
+	const ownerName = owner.data.name;
+	const areaOwner = area.data.owner;
+
+	// Try exact match
+	if (areaOwner === ownerName) return true;
+
+	// Try lowercase match
+	if (areaOwner.toLowerCase() === ownerName.toLowerCase()) return true;
+
+	// Try first word match
+	const areaFirstWord = areaOwner.split(' ')[0];
+	const ownerFirstWord = ownerName.split(' ')[0];
+	if (areaFirstWord === ownerFirstWord) return true;
+
+	// Try first word lowercase match
+	if (areaFirstWord.toLowerCase() === ownerFirstWord.toLowerCase()) return true;
+
+	// Special case for Alterra
+	if (ownerName.includes('Alterra') && areaOwner.includes('Alterra')) return true;
+
+	return false;
+}).sort((a, b) => a.data.mountain.localeCompare(b.data.mountain));
+
+// Group ski areas by state
+const skiAreasByState = new Map<string, CollectionEntry<'ski-areas'>[]>();
+ownedSkiAreas.forEach((area) => {
+	if (!skiAreasByState.has(area.data.state)) {
+		skiAreasByState.set(area.data.state, []);
+	}
+	skiAreasByState.get(area.data.state)?.push(area);
+});
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<Layout title={`${owner.data.name} - Storm Skiing Pass Tracker 5002`}>
+	<div class="max-w-4xl mx-auto">
+		<div class="mb-8">
+			<a href={`${baseUrl}/owners`} class="text-blue-600 hover:underline">&larr; Back to Owners</a>
+		</div>
+
+		<div class="mb-8">
+			{owner.data.logo && (
+				<img
+					src={owner.data.logo}
+					alt={`${owner.data.name} logo`}
+					class="max-h-32 mb-4"
+				/>
+			)}
+			<h1 class="text-4xl font-bold mb-4">{owner.data.name}</h1>
+			{owner.data.website && (
+				<a
+					href={owner.data.website}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-blue-600 hover:underline"
+				>
+					Website
+				</a>
+			)}
+		</div>
+
+		{owner.data.description && (
+			<div class="prose max-w-none mb-8">
+				<p>{owner.data.description}</p>
+			</div>
+		)}
+
+		{ownedSkiAreas.length > 0 ? (
+			<div class="mb-8">
+				<h2 class="text-2xl font-bold mb-4">Properties</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+					{[...skiAreasByState.entries()].sort().map(([state, areas]) => (
+						<div class="border border-gray-300 rounded-lg p-4">
+							<h3 class="font-bold mb-2">{state}</h3>
+							<ul class="list-disc pl-5">
+								{areas.map((area: CollectionEntry<'ski-areas'>) => (
+									<li>
+										<a
+											href={`${baseUrl}/ski-areas/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}/${area.data.state.toLowerCase().replace(/\s+/g, '-')}/${area.slug.split('/').slice(2).join('/')}`}
+											class="text-blue-600 hover:underline"
+										>
+											{area.data.mountain}
+										</a>
+									</li>
+								))}
+							</ul>
+						</div>
+					))}
+				</div>
+			</div>
+		) : (
+			<p class="text-gray-600">No ski areas found for this owner.</p>
+		)}
+
+		{ownedSkiAreas.length > 0 && (
+			<div>
+				<h2 class="text-2xl font-bold mb-4">Ski Area Details</h2>
+				<div class="overflow-x-auto">
+					<table class="min-w-full bg-white border border-gray-300">
+						<thead>
+							<tr class="bg-gray-100">
+								<th class="px-4 py-2 text-left border-b">Mountain</th>
+								<th class="px-4 py-2 text-right border-b">Vertical Drop</th>
+								<th class="px-4 py-2 text-right border-b">Skiable Acres</th>
+								<th class="px-4 py-2 text-left border-b">Pass Affiliations</th>
+							</tr>
+						</thead>
+						<tbody>
+							{ownedSkiAreas.map((area) => (
+								<tr class="hover:bg-gray-50">
+									<td class="px-4 py-2 border-b">
+										<a
+											href={`${baseUrl}/ski-areas/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}/${area.data.state.toLowerCase().replace(/\s+/g, '-')}/${area.slug.split('/').slice(2).join('/')}`}
+											class="text-blue-600 hover:underline"
+										>
+											{area.data.mountain}
+										</a>
+									</td>
+									<td class="px-4 py-2 border-b text-right">{area.data.verticalDrop || 'N/A'}</td>
+									<td class="px-4 py-2 border-b text-right">{area.data.skiableAcres || 'N/A'}</td>
+									<td class="px-4 py-2 border-b">{area.data.passAffiliations || 'None'}</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		)}
+	</div>
+</Layout>

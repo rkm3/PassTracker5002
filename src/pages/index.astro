@@ -14,6 +14,33 @@ skiAreas.sort((a, b) => {
 	return a.data.mountain.localeCompare(b.data.mountain);
 });
 
+// Get all owners
+const owners = await getCollection('owners');
+
+// Create a more robust mapping for owner names
+const ownerSlugs = new Map();
+owners.forEach(owner => {
+	const ownerName = owner.data.name;
+	const ownerSlug = owner.slug;
+
+	// Store the exact name
+	ownerSlugs.set(ownerName, ownerSlug);
+
+	// Store lowercase version
+	ownerSlugs.set(ownerName.toLowerCase(), ownerSlug);
+
+	// Store first word only (for cases like "Alterra" vs "Alterra Mountain Company")
+	const firstWord = ownerName.split(' ')[0];
+	ownerSlugs.set(firstWord, ownerSlug);
+	ownerSlugs.set(firstWord.toLowerCase(), ownerSlug);
+
+	// Special case for Alterra
+	if (ownerName.includes('Alterra')) {
+		ownerSlugs.set('Alterra', ownerSlug);
+		ownerSlugs.set('alterra', ownerSlug);
+	}
+});
+
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
@@ -26,6 +53,9 @@ const baseUrl = import.meta.env.BASE_URL;
 		</a>
 		<a href={`${baseUrl}/ski-areas/usa`} class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
 			View US Ski Areas
+		</a>
+		<a href={`${baseUrl}/owners`} class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
+			View by Owner
 		</a>
 	</div>
 
@@ -43,38 +73,84 @@ const baseUrl = import.meta.env.BASE_URL;
 				</tr>
 			</thead>
 			<tbody>
-				{skiAreas.map((area) => (
-					<tr class="hover:bg-gray-50">
-						<td class="px-4 py-2 border-b">
-							<a
-								href={`${baseUrl}/countries/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}`}
-								class="text-blue-600 hover:underline"
-							>
-								{area.data.country}
-							</a>
-						</td>
-						<td class="px-4 py-2 border-b">
-							<a
-								href={`${baseUrl}/countries/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}/${area.data.state.toLowerCase().replace(/\s+/g, '-')}`}
-								class="text-blue-600 hover:underline"
-							>
-								{area.data.state}
-							</a>
-						</td>
-						<td class="px-4 py-2 border-b">
-							<a
-								href={`${baseUrl}/ski-areas/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}/${area.data.state.toLowerCase().replace(/\s+/g, '-')}/${area.slug.split('/').slice(2).join('/')}`}
-								class="text-blue-600 hover:underline"
-							>
-								{area.data.mountain}
-							</a>
-						</td>
-						<td class="px-4 py-2 border-b text-right">{area.data.verticalDrop || 'N/A'}</td>
-						<td class="px-4 py-2 border-b text-right">{area.data.skiableAcres || 'N/A'}</td>
-						<td class="px-4 py-2 border-b">{area.data.owner || 'Independent'}</td>
-						<td class="px-4 py-2 border-b">{area.data.passAffiliations || 'None'}</td>
-					</tr>
-				))}
+				{skiAreas.map((area) => {
+					// Get the owner slug, trying multiple approaches
+					let ownerSlug = null;
+					if (area.data.owner) {
+						// Try exact match
+						ownerSlug = ownerSlugs.get(area.data.owner);
+
+						// Try lowercase match
+						if (!ownerSlug) {
+							ownerSlug = ownerSlugs.get(area.data.owner.toLowerCase());
+						}
+
+						// Try first word match
+						if (!ownerSlug) {
+							const firstWord = area.data.owner.split(' ')[0];
+							ownerSlug = ownerSlugs.get(firstWord);
+						}
+
+						// Try first word lowercase match
+						if (!ownerSlug) {
+							const firstWord = area.data.owner.split(' ')[0].toLowerCase();
+							ownerSlug = ownerSlugs.get(firstWord);
+						}
+
+						// Special case for Alterra
+						if (!ownerSlug && area.data.owner.includes('Alterra')) {
+							ownerSlug = ownerSlugs.get('Alterra');
+						}
+					}
+
+					return (
+						<tr class="hover:bg-gray-50">
+							<td class="px-4 py-2 border-b">
+								<a
+									href={`${baseUrl}/countries/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}`}
+									class="text-blue-600 hover:underline"
+								>
+									{area.data.country}
+								</a>
+							</td>
+							<td class="px-4 py-2 border-b">
+								<a
+									href={`${baseUrl}/countries/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}/${area.data.state.toLowerCase().replace(/\s+/g, '-')}`}
+									class="text-blue-600 hover:underline"
+								>
+									{area.data.state}
+								</a>
+							</td>
+							<td class="px-4 py-2 border-b">
+								<a
+									href={`${baseUrl}/ski-areas/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}/${area.data.state.toLowerCase().replace(/\s+/g, '-')}/${area.slug.split('/').slice(2).join('/')}`}
+									class="text-blue-600 hover:underline"
+								>
+									{area.data.mountain}
+								</a>
+							</td>
+							<td class="px-4 py-2 border-b text-right">{area.data.verticalDrop || 'N/A'}</td>
+							<td class="px-4 py-2 border-b text-right">{area.data.skiableAcres || 'N/A'}</td>
+							<td class="px-4 py-2 border-b">
+								{area.data.owner ? (
+									ownerSlug ? (
+										<a
+											href={`${baseUrl}/owners/${ownerSlug}`}
+											class="text-blue-600 hover:underline"
+										>
+											{area.data.owner}
+										</a>
+									) : (
+										area.data.owner
+									)
+								) : (
+									'Independent'
+								)}
+							</td>
+							<td class="px-4 py-2 border-b">{area.data.passAffiliations || 'None'}</td>
+						</tr>
+					);
+				})}
 			</tbody>
 		</table>
 	</div>
