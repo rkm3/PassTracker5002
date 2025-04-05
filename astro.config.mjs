@@ -13,4 +13,6 @@ export default defineConfig({
 			},
 		],
 	},
+	site: 'https://rkm3.github.io',
+	base: '/PassTracker5002',
 });
