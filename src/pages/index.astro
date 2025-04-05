@@ -45,8 +45,22 @@ const baseUrl = import.meta.env.BASE_URL;
 			<tbody>
 				{skiAreas.map((area) => (
 					<tr class="hover:bg-gray-50">
-						<td class="px-4 py-2 border-b">{area.data.country}</td>
-						<td class="px-4 py-2 border-b">{area.data.state}</td>
+						<td class="px-4 py-2 border-b">
+							<a
+								href={`${baseUrl}/countries/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}`}
+								class="text-blue-600 hover:underline"
+							>
+								{area.data.country}
+							</a>
+						</td>
+						<td class="px-4 py-2 border-b">
+							<a
+								href={`${baseUrl}/countries/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}/${area.data.state.toLowerCase().replace(/\s+/g, '-')}`}
+								class="text-blue-600 hover:underline"
+							>
+								{area.data.state}
+							</a>
+						</td>
 						<td class="px-4 py-2 border-b">
 							<a
 								href={`${baseUrl}/ski-areas/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}/${area.data.state.toLowerCase().replace(/\s+/g, '-')}/${area.slug.split('/').slice(2).join('/')}`}
