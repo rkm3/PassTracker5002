@@ -1,16 +1,51 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
+const skiAreas = await getCollection('ski-areas');
+skiAreas.sort((a, b) => {
+	// First sort by location
+	const locationCompare = a.data.location.localeCompare(b.data.location);
+	if (locationCompare !== 0) return locationCompare;
+	// Then by mountain name
+	return a.data.mountain.localeCompare(b.data.mountain);
+});
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Storm Skiing - Pass Tracker 5002">
+	<h1 class="text-4xl font-bold mb-8">Pass Tracker 5002</h1>
+
+	<div class="overflow-x-auto">
+		<table class="min-w-full bg-white border border-gray-300">
+			<thead>
+				<tr class="bg-gray-100">
+					<th class="px-4 py-2 text-left border-b">Location</th>
+					<th class="px-4 py-2 text-left border-b">Mountain</th>
+					<th class="px-4 py-2 text-right border-b">Vertical Drop</th>
+					<th class="px-4 py-2 text-right border-b">Skiable Acres</th>
+					<th class="px-4 py-2 text-left border-b">Owner</th>
+					<th class="px-4 py-2 text-left border-b">Pass Affiliations</th>
+				</tr>
+			</thead>
+			<tbody>
+				{skiAreas.map((area) => (
+					<tr class="hover:bg-gray-50">
+						<td class="px-4 py-2 border-b">{area.data.location}</td>
+						<td class="px-4 py-2 border-b">
+							<a
+								href={`/ski-areas/${area.slug}`}
+								class="text-blue-600 hover:underline"
+							>
+								{area.data.mountain}
+							</a>
+						</td>
+						<td class="px-4 py-2 border-b text-right">{area.data.verticalDrop || 'N/A'}</td>
+						<td class="px-4 py-2 border-b text-right">{area.data.skiableAcres || 'N/A'}</td>
+						<td class="px-4 py-2 border-b">{area.data.owner || 'Independent'}</td>
+						<td class="px-4 py-2 border-b">{area.data.passAffiliations || 'None'}</td>
+					</tr>
+				))}
+			</tbody>
+		</table>
+	</div>
+</Layout>

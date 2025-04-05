@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const skiAreas = await getCollection('ski-areas');
+---
+
+<Layout title="Ski Area Count">
+	<h1 class="text-4xl font-bold mb-8">Ski Area Count</h1>
+	<p>There are {skiAreas.length} ski areas in the database.</p>
+</Layout>
