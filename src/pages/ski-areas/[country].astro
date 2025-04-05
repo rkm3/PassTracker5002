@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+	const skiAreas = await getCollection('ski-areas');
+
+	// Get unique countries
+	const countries = [...new Set(skiAreas.map(area => area.data.country))];
+
+	return countries.map(country => {
+		// Filter ski areas for this country
+		const countrySkiAreas = skiAreas.filter(area => area.data.country === country);
+
+		// Get unique states for this country
+		const states = [...new Set(countrySkiAreas.map(area => area.data.state))].sort();
+
+		// Count ski areas per state
+		const stateCounts = new Map<string, number>();
+		countrySkiAreas.forEach(area => {
+			const state = area.data.state;
+			stateCounts.set(state, (stateCounts.get(state) || 0) + 1);
+		});
+
+		// Special handling for U.S.
+		const urlCountry = country === 'U.S.' ? 'us' : country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-');
+
+		return {
+			params: {
+				country: urlCountry
+			},
+			props: {
+				country,
+				states,
+				stateCounts
+			}
+		};
+	});
+}
+
+interface Props {
+	country: string;
+	states: string[];
+	stateCounts: Map<string, number>;
+}
+
+const { country, states, stateCounts } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<Layout title={`Ski Areas in ${country}`}>
+	<div class="max-w-4xl mx-auto">
+		<nav class="mb-8">
+			<a href={`${baseUrl}/ski-areas`} class="text-blue-600 hover:underline">← Back to All Ski Areas</a>
+		</nav>
+
+		<h1 class="text-4xl font-bold mb-8">Ski Areas in {country}</h1>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			{states.map((state: string) => {
+				const count = stateCounts.get(state) || 0;
+				return (
+					<div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+						<a
+							href={`${baseUrl}/ski-areas/${country === 'U.S.' ? 'us' : country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}/${state.toLowerCase().replace(/\s+/g, '-')}`}
+							class="block"
+						>
+							<h2 class="text-2xl font-bold mb-2">{state}</h2>
+							<p class="text-gray-600">{count} ski area{count !== 1 ? 's' : ''}</p>
+						</a>
+					</div>
+				);
+			})}
+		</div>
+	</div>
+</Layout>

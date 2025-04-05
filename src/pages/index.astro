@@ -4,12 +4,17 @@ import { getCollection } from 'astro:content';
 
 const skiAreas = await getCollection('ski-areas');
 skiAreas.sort((a, b) => {
-	// First sort by location
-	const locationCompare = a.data.location.localeCompare(b.data.location);
-	if (locationCompare !== 0) return locationCompare;
+	// First sort by country
+	const countryCompare = a.data.country.localeCompare(b.data.country);
+	if (countryCompare !== 0) return countryCompare;
+	// Then by state
+	const stateCompare = a.data.state.localeCompare(b.data.state);
+	if (stateCompare !== 0) return stateCompare;
 	// Then by mountain name
 	return a.data.mountain.localeCompare(b.data.mountain);
 });
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Storm Skiing - Pass Tracker 5002">
@@ -19,7 +24,8 @@ skiAreas.sort((a, b) => {
 		<table class="min-w-full bg-white border border-gray-300">
 			<thead>
 				<tr class="bg-gray-100">
-					<th class="px-4 py-2 text-left border-b">Location</th>
+					<th class="px-4 py-2 text-left border-b">Country</th>
+					<th class="px-4 py-2 text-left border-b">State</th>
 					<th class="px-4 py-2 text-left border-b">Mountain</th>
 					<th class="px-4 py-2 text-right border-b">Vertical Drop</th>
 					<th class="px-4 py-2 text-right border-b">Skiable Acres</th>
@@ -30,10 +36,11 @@ skiAreas.sort((a, b) => {
 			<tbody>
 				{skiAreas.map((area) => (
 					<tr class="hover:bg-gray-50">
-						<td class="px-4 py-2 border-b">{area.data.location}</td>
+						<td class="px-4 py-2 border-b">{area.data.country}</td>
+						<td class="px-4 py-2 border-b">{area.data.state}</td>
 						<td class="px-4 py-2 border-b">
 							<a
-								href={`/ski-areas/${area.slug}`}
+								href={`${baseUrl}/ski-areas/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}/${area.data.state.toLowerCase().replace(/\s+/g, '-')}/${area.slug.split('/').slice(2).join('/')}`}
 								class="text-blue-600 hover:underline"
 							>
 								{area.data.mountain}

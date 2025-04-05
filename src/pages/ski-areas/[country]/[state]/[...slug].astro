@@ -1,0 +1,104 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+	const skiAreas = await getCollection('ski-areas');
+
+	// Group ski areas by country and state
+	const countryStateAreas = new Map<string, CollectionEntry<'ski-areas'>[]>();
+
+	skiAreas.forEach(area => {
+		const key = `${area.data.country}|${area.data.state}`;
+		if (!countryStateAreas.has(key)) {
+			countryStateAreas.set(key, []);
+		}
+		countryStateAreas.get(key)?.push(area);
+	});
+
+	// Generate paths for each country-state combination
+	return Array.from(countryStateAreas.entries()).map(([key, areas]) => {
+		const [country, state] = key.split('|');
+
+		// Special handling for U.S.
+		const urlCountry = country === 'U.S.' ? 'us' : country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-');
+		const urlState = state.toLowerCase().replace(/\s+/g, '-');
+
+		// Create a path for each ski area in this state
+		return areas.map(area => {
+			return {
+				params: {
+					country: urlCountry,
+					state: urlState,
+					slug: area.slug.split('/').slice(2).join('/') // Remove country/state from the slug
+				},
+				props: { area }
+			};
+		});
+	}).flat();
+}
+
+const { area } = Astro.props;
+const { Content } = await area.render();
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<Layout title={`${area.data.mountain}`}>
+	<div class="max-w-4xl mx-auto">
+		<nav class="mb-8">
+			<a href={`${baseUrl}/ski-areas/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}/${area.data.state.toLowerCase().replace(/\s+/g, '-')}`} class="text-blue-600 hover:underline">← Back to {area.data.state}, {area.data.country}</a>
+		</nav>
+
+		<div class="bg-white rounded-lg shadow-lg p-8">
+			<h1 class="text-4xl font-bold mb-4">{area.data.mountain}</h1>
+			<div class="text-lg text-gray-600 mb-8">{area.data.country} - {area.data.state}</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+				<div>
+					<h2 class="text-xl font-semibold mb-4">Mountain Stats</h2>
+					<dl class="space-y-2">
+						<div class="flex justify-between">
+							<dt class="font-medium">Vertical Drop:</dt>
+							<dd>{area.data.verticalDrop || 'N/A'}</dd>
+						</div>
+						<div class="flex justify-between">
+							<dt class="font-medium">Skiable Acres:</dt>
+							<dd>{area.data.skiableAcres || 'N/A'}</dd>
+						</div>
+						<div class="flex justify-between">
+							<dt class="font-medium">Annual Snowfall:</dt>
+							<dd>{area.data.annualSnowfall || 'N/A'}</dd>
+						</div>
+					</dl>
+				</div>
+
+				<div>
+					<h2 class="text-xl font-semibold mb-4">Operations</h2>
+					<dl class="space-y-2">
+						<div class="flex justify-between">
+							<dt class="font-medium">Owner:</dt>
+							<dd>{area.data.owner || 'Independent'}</dd>
+						</div>
+						<div class="flex justify-between">
+							<dt class="font-medium">Pass Affiliations:</dt>
+							<dd>{area.data.passAffiliations || 'None'}</dd>
+						</div>
+						<div class="flex justify-between">
+							<dt class="font-medium">Operating 2024-25:</dt>
+							<dd>{area.data.operating2425}</dd>
+						</div>
+						<div class="flex justify-between">
+							<dt class="font-medium">Operated 2023-24:</dt>
+							<dd>{area.data.operated2324}</dd>
+						</div>
+					</dl>
+				</div>
+			</div>
+
+			<div class="prose max-w-none">
+				<Content />
+			</div>
+		</div>
+	</div>
+</Layout>

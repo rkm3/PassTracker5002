@@ -3,7 +3,8 @@ import { defineCollection, z } from 'astro:content';
 const skiAreas = defineCollection({
 	type: 'content',
 	schema: z.object({
-		location: z.string(),
+		country: z.string(),
+		state: z.string(),
 		mountain: z.string(),
 		verticalDrop: z.string().optional(),
 		skiableAcres: z.string().optional(),
