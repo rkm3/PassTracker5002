@@ -89,7 +89,163 @@ const baseUrl = import.meta.env.BASE_URL;
 		</a>
 	</div>
 
-	<div class="overflow-x-auto">
+	<!-- Mobile view (card-based layout) -->
+	<div class="block md:hidden">
+		{skiAreas.map((area) => {
+			// Get the owner slug, trying multiple approaches
+			let ownerSlug = null;
+			if (area.data.owner) {
+				// Try exact match
+				ownerSlug = ownerSlugs.get(area.data.owner);
+
+				// Try lowercase match
+				if (!ownerSlug) {
+					ownerSlug = ownerSlugs.get(area.data.owner.toLowerCase());
+				}
+
+				// Try first word match
+				if (!ownerSlug) {
+					const firstWord = area.data.owner.split(' ')[0];
+					ownerSlug = ownerSlugs.get(firstWord);
+				}
+
+				// Try first word lowercase match
+				if (!ownerSlug) {
+					const firstWord = area.data.owner.split(' ')[0].toLowerCase();
+					ownerSlug = ownerSlugs.get(firstWord);
+				}
+
+				// Special case for Alterra
+				if (!ownerSlug && area.data.owner.includes('Alterra')) {
+					ownerSlug = ownerSlugs.get('Alterra');
+				}
+			}
+
+			// Process pass affiliations to create links
+			let passAffiliationLinks = '<span class="text-gray-400">—</span>';
+			if (area.data.passAffiliations) {
+				const affiliations = area.data.passAffiliations.split(',').map(aff => aff.trim());
+				passAffiliationLinks = affiliations.map(affiliation => {
+					// Try to find a matching pass family
+					let passFamilySlug = null;
+
+					// Try exact match
+					passFamilySlug = passFamilySlugs.get(affiliation);
+
+					// Try lowercase match
+					if (!passFamilySlug) {
+						passFamilySlug = passFamilySlugs.get(affiliation.toLowerCase());
+					}
+
+					// Try first word match
+					if (!passFamilySlug) {
+						const firstWord = affiliation.split(' ')[0];
+						passFamilySlug = passFamilySlugs.get(firstWord);
+					}
+
+					// Try first word lowercase match
+					if (!passFamilySlug) {
+						const firstWord = affiliation.split(' ')[0].toLowerCase();
+						passFamilySlug = passFamilySlugs.get(firstWord);
+					}
+
+					// Special cases
+					if (!passFamilySlug) {
+						if (affiliation.includes('Epic')) {
+							passFamilySlug = passFamilySlugs.get('Epic');
+						} else if (affiliation.includes('Ikon')) {
+							passFamilySlug = passFamilySlugs.get('Ikon');
+						} else if (affiliation.includes('Indy')) {
+							passFamilySlug = passFamilySlugs.get('Indy');
+						} else if (affiliation.includes('Mountain Collective')) {
+							passFamilySlug = passFamilySlugs.get('Mountain Collective');
+						} else if (affiliation.includes('Powder Alliance')) {
+							passFamilySlug = passFamilySlugs.get('Powder Alliance');
+						} else if (affiliation.includes('Freedom')) {
+							passFamilySlug = passFamilySlugs.get('Freedom');
+						} else if (affiliation.includes('Power')) {
+							passFamilySlug = passFamilySlugs.get('Power');
+						} else if (affiliation.includes('New England Pass')) {
+							passFamilySlug = passFamilySlugs.get('New England Pass');
+						} else if (affiliation.includes('Uphill New England')) {
+							passFamilySlug = passFamilySlugs.get('Uphill New England');
+						}
+					}
+
+					if (passFamilySlug) {
+						return `<a href="${baseUrl}/pass-families/${passFamilySlug}" class="text-blue-600 hover:underline">${affiliation}</a>`;
+					} else {
+						return affiliation;
+					}
+				}).join(', ');
+			}
+
+			return (
+				<div class="bg-white border border-gray-300 rounded-lg mb-4 p-4 shadow-sm">
+					<h2 class="text-xl font-bold mb-2 bg-gray-100 p-2 rounded">
+						<a
+							href={`${baseUrl}/ski-areas/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}/${area.data.state.toLowerCase().replace(/\s+/g, '-')}/${area.slug.split('/').slice(2).join('/')}`}
+							class="text-blue-600 hover:underline"
+						>
+							{area.data.mountain}
+						</a>
+					</h2>
+					<div class="grid grid-cols-2 gap-2 text-sm">
+						<div>
+							<span class="font-semibold">Country:</span>
+							<a
+								href={`${baseUrl}/countries/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}`}
+								class="text-blue-600 hover:underline ml-1"
+							>
+								{area.data.country}
+							</a>
+						</div>
+						<div>
+							<span class="font-semibold">State:</span>
+							<a
+								href={`${baseUrl}/countries/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}/${area.data.state.toLowerCase().replace(/\s+/g, '-')}`}
+								class="text-blue-600 hover:underline ml-1"
+							>
+								{area.data.state}
+							</a>
+						</div>
+						<div>
+							<span class="font-semibold">Vertical Drop:</span>
+							<span class="ml-1">{area.data.verticalDrop || 'N/A'}</span>
+						</div>
+						<div>
+							<span class="font-semibold">Skiable Acres:</span>
+							<span class="ml-1">{area.data.skiableAcres || 'N/A'}</span>
+						</div>
+						<div>
+							<span class="font-semibold">Owner:</span>
+							{area.data.owner ? (
+								ownerSlug ? (
+									<a
+										href={`${baseUrl}/owners/${ownerSlug}`}
+										class="text-blue-600 hover:underline ml-1"
+									>
+										{area.data.owner}
+									</a>
+								) : (
+									<span class="ml-1">{area.data.owner}</span>
+								)
+							) : (
+								<span class="ml-1">Independent</span>
+							)}
+						</div>
+						<div class="col-span-2">
+							<span class="font-semibold">Pass Affiliations:</span>
+							<div class="mt-1" set:html={passAffiliationLinks}></div>
+						</div>
+					</div>
+				</div>
+			);
+		})}
+	</div>
+
+	<!-- Desktop view (table layout) -->
+	<div class="hidden md:block overflow-x-auto">
 		<table class="min-w-full bg-white border border-gray-300">
 			<thead>
 				<tr class="bg-gray-100">
