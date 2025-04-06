@@ -174,7 +174,11 @@ const ownerSlug = findOwnerSlug(area.data.owner);
 
 		<div class="bg-white rounded-lg shadow-lg p-8">
 			<h1 class="text-4xl font-bold mb-4">{area.data.mountain}</h1>
-			<div class="text-lg text-gray-600 mb-8">{area.data.country} - {area.data.state}</div>
+			<div class="text-lg text-gray-600 mb-8">
+				<a href={`${baseUrl}/ski-areas/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}`} class="text-blue-600 hover:underline">{area.data.country}</a>
+				{' - '}
+				<a href={`${baseUrl}/ski-areas/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}/${area.data.state.toLowerCase().replace(/\s+/g, '-')}`} class="text-blue-600 hover:underline">{area.data.state}</a>
+			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
 				<div>

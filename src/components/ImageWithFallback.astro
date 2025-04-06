@@ -1,0 +1,26 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  fallbackSrc?: string;
+}
+
+const { src, alt, class: className, fallbackSrc = "/images/placeholder.png" } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
+
+// Ensure the src starts with a forward slash
+const normalizedSrc = src.startsWith('/') ? src : `/${src}`;
+const normalizedFallbackSrc = fallbackSrc.startsWith('/') ? fallbackSrc : `/${fallbackSrc}`;
+
+// Add base URL to both the main image and fallback
+const fullSrc = `${baseUrl}${normalizedSrc}`;
+const fullFallbackSrc = `${baseUrl}${normalizedFallbackSrc}`;
+---
+
+<img
+  src={fullSrc}
+  alt={alt}
+  class={className}
+  onerror={`this.onerror=null; this.src='${fullFallbackSrc}';`}
+/>

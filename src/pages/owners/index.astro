@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import ImageWithFallback from '../../components/ImageWithFallback.astro';
 
 const owners = await getCollection('owners');
 owners.sort((a, b) => a.data.name.localeCompare(b.data.name));
@@ -21,7 +22,7 @@ const baseUrl = import.meta.env.BASE_URL;
 				<div class="border border-gray-300 rounded-lg p-6 hover:shadow-md transition-shadow">
 					<div class="flex items-center mb-4">
 						{owner.data.logo && (
-							<img
+							<ImageWithFallback
 								src={owner.data.logo}
 								alt={`${owner.data.name} logo`}
 								class="h-12 w-auto mr-4"

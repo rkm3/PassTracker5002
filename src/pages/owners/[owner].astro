@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import ImageWithFallback from '../../components/ImageWithFallback.astro';
 
 export async function getStaticPaths() {
 	const owners = await getCollection('owners');
@@ -146,7 +147,7 @@ function processPassAffiliations(affiliationsString: string | undefined): string
 
 		<div class="mb-8">
 			{owner.data.logo && (
-				<img
+				<ImageWithFallback
 					src={owner.data.logo}
 					alt={`${owner.data.name} logo`}
 					class="max-h-32 mb-4"

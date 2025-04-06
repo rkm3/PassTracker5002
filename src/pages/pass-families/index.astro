@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import ImageWithFallback from '../../components/ImageWithFallback.astro';
 
 const passFamilies = await getCollection('pass-families');
 passFamilies.sort((a, b) => a.data.name.localeCompare(b.data.name));
@@ -22,7 +23,11 @@ const baseUrl = import.meta.env.BASE_URL;
 			<div class="bg-white border border-gray-300 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
 				{passFamily.data.logo && (
 					<div class="h-40 bg-gray-100 flex items-center justify-center p-4">
-						<img src={passFamily.data.logo} alt={`${passFamily.data.name} logo`} class="max-h-full max-w-full object-contain" />
+						<ImageWithFallback
+							src={passFamily.data.logo}
+							alt={`${passFamily.data.name} logo`}
+							class="max-h-full max-w-full object-contain"
+						/>
 					</div>
 				)}
 				<div class="p-4">

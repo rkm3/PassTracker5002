@@ -2,6 +2,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import ImageWithFallback from '../../../components/ImageWithFallback.astro';
 
 export async function getStaticPaths() {
 	const passes = await getCollection('passes');
@@ -110,7 +111,7 @@ const formatDate = (dateString: string | undefined) => {
 
 		<div class="bg-white rounded-lg shadow-lg p-8">
 			{pass.data.logo && (
-				<img
+				<ImageWithFallback
 					src={pass.data.logo}
 					alt={`${pass.data.name} logo`}
 					class="max-h-32 mb-4"

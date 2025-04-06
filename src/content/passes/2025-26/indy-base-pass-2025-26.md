@@ -90,7 +90,7 @@ resorts:
   - name: Lost Trail
     location: Montana/Idaho
     days: 2
-  - name: Red Lodge Mountain
+  - name: Red Lodge
     location: Montana
     days: 2
   - name: White Pass

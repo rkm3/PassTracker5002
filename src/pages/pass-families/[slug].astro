@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import type { CollectionEntry } from 'astro:content';
+import ImageWithFallback from '../../components/ImageWithFallback.astro';
 
 export async function getStaticPaths() {
 	const passFamilies = await getCollection('pass-families');
@@ -57,7 +58,11 @@ const seasons = Array.from(passesBySeason.entries())
 		<article class="prose lg:prose-xl">
 			{passFamily.data.logo && (
 				<div class="mb-8">
-					<img src={passFamily.data.logo} alt={`${passFamily.data.name} logo`} class="max-h-40 mx-auto" />
+					<ImageWithFallback
+						src={passFamily.data.logo}
+						alt={`${passFamily.data.name} logo`}
+						class="max-h-40 mx-auto"
+					/>
 				</div>
 			)}
 
