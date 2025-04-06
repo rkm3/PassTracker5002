@@ -19,6 +19,31 @@ const { passFamily } = Astro.props;
 const { Content } = await passFamily.render();
 
 const baseUrl = import.meta.env.BASE_URL;
+
+// Get all passes
+const allPasses = await getCollection('passes');
+
+// Filter passes that belong to this pass family
+const familyPasses = allPasses.filter(pass => pass.data.passFamily === passFamily.data.name);
+
+// Group passes by season
+const passesBySeason = new Map<string, CollectionEntry<'passes'>[]>();
+
+familyPasses.forEach(pass => {
+	const season = pass.data.season;
+	if (!passesBySeason.has(season)) {
+		passesBySeason.set(season, []);
+	}
+	passesBySeason.get(season)?.push(pass);
+});
+
+// Convert to array and sort by season (descending)
+const seasons = Array.from(passesBySeason.entries())
+	.map(([season, passes]) => ({
+		season,
+		passes: passes.sort((a, b) => a.data.name.localeCompare(b.data.name))
+	}))
+	.sort((a, b) => b.season.localeCompare(a.season));
 ---
 
 <Layout title={`${passFamily.data.name} - Pass Tracker 5002`}>
@@ -48,5 +73,39 @@ const baseUrl = import.meta.env.BASE_URL;
 
 			<Content />
 		</article>
+
+		{/* Passes by Season Section */}
+		{familyPasses.length > 0 && (
+			<div class="mt-12">
+				<h2 class="text-2xl font-bold mb-6">Passes by Season</h2>
+
+				<div class="space-y-8">
+					{seasons.map(({ season, passes }) => (
+						<div class="bg-white rounded-lg shadow-md p-6">
+							<h3 class="text-xl font-semibold mb-4">{season} Season</h3>
+							<div class="flex flex-wrap gap-3">
+								{passes.map(pass => {
+									// Get the slug without the season prefix
+									const pathParts = pass.slug.split('/');
+									// If there's no path parts after the season, use the pass name as the slug
+									const slug = pathParts.length > 1
+										? pathParts.slice(1).join('/').replace(/\.md$/, '')
+										: pass.data.name.toLowerCase().replace(/\s+/g, '-');
+
+									return (
+										<a
+											href={`${baseUrl}/passes/${season}/${slug}`}
+											class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition-colors"
+										>
+											{pass.data.name}
+										</a>
+									);
+								})}
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		)}
 	</div>
 </Layout>

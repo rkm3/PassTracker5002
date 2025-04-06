@@ -1,0 +1,148 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+	const passes = await getCollection('passes');
+
+	// Group passes by season
+	const passesBySeason = new Map<string, CollectionEntry<'passes'>[]>();
+
+	passes.forEach(pass => {
+		// Get season from the frontmatter
+		const season = pass.data.season;
+
+		if (!passesBySeason.has(season)) {
+			passesBySeason.set(season, []);
+		}
+		passesBySeason.get(season)?.push(pass);
+	});
+
+	// Generate paths for each season
+	return Array.from(passesBySeason.entries()).map(([season, seasonPasses]) => {
+		// Sort passes by name
+		seasonPasses.sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+		return {
+			params: { season },
+			props: { passes: seasonPasses }
+		};
+	});
+}
+
+interface Props {
+	passes: CollectionEntry<'passes'>[];
+}
+
+const { passes } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
+
+// Extract season from the URL
+const season = Astro.params.season;
+
+// Calculate summary statistics
+const totalPasses = passes.length;
+
+// Helper function to safely convert price to number
+const getPriceAsNumber = (price: string | number | undefined): number => {
+	if (price === undefined) return 0;
+	return typeof price === 'string' ? parseFloat(price) : price;
+};
+
+const totalPrice = passes.reduce((sum, pass) => sum + getPriceAsNumber(pass.data.price), 0);
+const avgPrice = totalPasses > 0 ? Math.round(totalPrice / totalPasses) : 0;
+
+// Get valid prices for min/max calculations
+const validPrices = passes
+	.map(pass => getPriceAsNumber(pass.data.price))
+	.filter(price => price > 0);
+
+const minPrice = validPrices.length > 0 ? Math.min(...validPrices) : 0;
+const maxPrice = validPrices.length > 0 ? Math.max(...validPrices) : 0;
+
+// Count passes with early bird pricing
+const earlyBirdCount = passes.filter(pass => pass.data.earlyBirdPrice).length;
+---
+
+<Layout title={`${season} Season Passes - Storm Skiing Pass Tracker 5002`}>
+	<div class="max-w-4xl mx-auto">
+		<div class="mb-8">
+			<a href={`${baseUrl}/passes`} class="text-blue-600 hover:underline">&larr; Back to Passes</a>
+		</div>
+
+		<h1 class="text-4xl font-bold mb-8">{season} Season Passes</h1>
+
+		{passes.length === 0 ? (
+			<div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded mb-4">
+				<p>No passes found for the {season} season.</p>
+			</div>
+		) : (
+			<>
+				<div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+					<h2 class="text-xl font-bold mb-4">Season Summary</h2>
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+						<div class="bg-white p-4 rounded shadow">
+							<p class="text-sm text-gray-500">Total Passes</p>
+							<p class="text-2xl font-bold">{totalPasses}</p>
+						</div>
+						<div class="bg-white p-4 rounded shadow">
+							<p class="text-sm text-gray-500">Average Price</p>
+							<p class="text-2xl font-bold">${avgPrice}</p>
+						</div>
+						<div class="bg-white p-4 rounded shadow">
+							<p class="text-sm text-gray-500">Price Range</p>
+							<p class="text-2xl font-bold">${minPrice} - ${maxPrice}</p>
+						</div>
+						<div class="bg-white p-4 rounded shadow">
+							<p class="text-sm text-gray-500">Early Bird Options</p>
+							<p class="text-2xl font-bold">{earlyBirdCount}</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					{passes.map(pass => {
+						// Generate a slug from the pass name if needed
+						const pathParts = pass.slug.split('/');
+						const slug = pathParts.length > 1
+							? pathParts.slice(1).join('/').replace(/\.md$/, '')
+							: pass.data.name.toLowerCase().replace(/\s+/g, '-');
+
+						return (
+							<div class="bg-white border border-gray-300 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+								{pass.data.logo && (
+									<div class="h-40 bg-gray-100 flex items-center justify-center p-4">
+										<img src={pass.data.logo} alt={`${pass.data.name} logo`} class="max-h-full max-w-full object-contain" />
+									</div>
+								)}
+								<div class="p-4">
+									<h3 class="text-xl font-bold mb-2">
+										<a href={`${baseUrl}/passes/${season}/${slug}`} class="text-blue-600 hover:underline">
+											{pass.data.name}
+										</a>
+									</h3>
+									<p class="text-gray-700 mb-2">{pass.data.description}</p>
+									<div class="text-sm text-gray-600 mb-4">
+										<p>Regular Price: ${pass.data.price}</p>
+										{pass.data.earlyBirdPrice && (
+											<p>Early Bird Price: ${pass.data.earlyBirdPrice}</p>
+										)}
+										{pass.data.onSaleDate && (
+											<p>On Sale: {new Date(pass.data.onSaleDate).toLocaleDateString()}</p>
+										)}
+									</div>
+									{pass.data.website && (
+										<a href={pass.data.website} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+											Visit Website
+										</a>
+									)}
+								</div>
+							</div>
+						);
+					})}
+				</div>
+			</>
+		)}
+	</div>
+</Layout>

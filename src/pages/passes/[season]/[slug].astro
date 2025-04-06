@@ -1,0 +1,253 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+	const passes = await getCollection('passes');
+
+	// Group passes by season
+	const passesBySeason = new Map<string, CollectionEntry<'passes'>[]>();
+
+	passes.forEach(pass => {
+		// Get season from the frontmatter
+		const season = pass.data.season;
+
+		if (!passesBySeason.has(season)) {
+			passesBySeason.set(season, []);
+		}
+		passesBySeason.get(season)?.push(pass);
+	});
+
+	// Generate paths for each pass in each season
+	return Array.from(passesBySeason.entries()).flatMap(([season, seasonPasses]) => {
+		return seasonPasses.map(pass => {
+			// Get the slug without the season prefix
+			const pathParts = pass.slug.split('/');
+			// If there's no path parts after the season, use the pass name as the slug
+			const slug = pathParts.length > 1
+				? pathParts.slice(1).join('/').replace(/\.md$/, '')
+				: pass.data.name.toLowerCase().replace(/\s+/g, '-');
+
+			return {
+				params: {
+					season,
+					slug
+				},
+				props: { pass }
+			};
+		});
+	});
+}
+
+interface Props {
+	pass: CollectionEntry<'passes'>;
+}
+
+const { pass } = Astro.props;
+const { Content } = await pass.render();
+const baseUrl = import.meta.env.BASE_URL;
+
+// Get season from the frontmatter
+const season = pass.data.season;
+
+// Get all ski areas to create links
+const skiAreas = await getCollection('ski-areas');
+const skiAreasMap = new Map(skiAreas.map(area => [area.data.mountain, area]));
+
+// Get pass families to create links
+const passFamilies = await getCollection('pass-families');
+const passFamilyMap = new Map(passFamilies.map(family => [family.data.name, family]));
+
+// Debug pass family information
+console.log('Pass name:', pass.data.name);
+console.log('Pass family:', pass.data.passFamily);
+console.log('Pass family exists:', pass.data.passFamily ? passFamilyMap.has(pass.data.passFamily) : 'No pass family');
+console.log('Available pass families:', Array.from(passFamilyMap.keys()));
+
+// Calculate resort statistics
+const totalResorts = pass.data.resorts?.length || 0;
+const unlimitedResorts = pass.data.resorts?.filter(r => r.days === 'Unlimited' || r.days === 'unlimited').length || 0;
+const limitedResorts = totalResorts - unlimitedResorts;
+
+// Group resorts by location
+const resortsByLocation = new Map<string, typeof pass.data.resorts>();
+if (pass.data.resorts) {
+	pass.data.resorts.forEach(resort => {
+		if (!resortsByLocation.has(resort.location)) {
+			resortsByLocation.set(resort.location, []);
+		}
+		resortsByLocation.get(resort.location)?.push(resort);
+	});
+}
+
+// Format price with dollar sign
+const formatPrice = (price: string | number | undefined) => {
+	if (price === undefined) return 'N/A';
+	return typeof price === 'string' ? `$${price}` : `$${price}`;
+};
+
+// Format date
+const formatDate = (dateString: string | undefined) => {
+	if (!dateString) return 'N/A';
+	try {
+		return new Date(dateString).toLocaleDateString('en-US', {
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric'
+		});
+	} catch (e) {
+		return dateString;
+	}
+};
+---
+
+<Layout title={`${pass.data.name} - Storm Skiing Pass Tracker 5002`}>
+	<div class="max-w-4xl mx-auto">
+		<div class="mb-8">
+			<a href={`${baseUrl}/passes/${season}`} class="text-blue-600 hover:underline">&larr; Back to {season} Season Passes</a>
+		</div>
+
+		<div class="bg-white rounded-lg shadow-lg p-8">
+			{pass.data.logo && (
+				<img
+					src={pass.data.logo}
+					alt={`${pass.data.name} logo`}
+					class="max-h-32 mb-4"
+				/>
+			)}
+			<h1 class="text-4xl font-bold mb-4">{pass.data.name}</h1>
+
+			{pass.data.passFamily && !passFamilyMap.has(pass.data.passFamily) && (
+				<div class="bg-yellow-100 p-2 mb-4 text-xs">
+					<p>Pass Family: {pass.data.passFamily || 'None'}</p>
+					<p>Pass Family Exists: No</p>
+				</div>
+			)}
+
+			{pass.data.passFamily && passFamilyMap.has(pass.data.passFamily) && (
+				<div class="mb-4">
+					<span class="text-gray-600">Pass Family: </span>
+					<a
+						href={`${baseUrl}/pass-families/${passFamilyMap.get(pass.data.passFamily)?.slug}`}
+						class="text-blue-600 hover:underline font-medium"
+					>
+						{pass.data.passFamily}
+					</a>
+				</div>
+			)}
+
+			{pass.data.website && (
+				<a
+					href={pass.data.website}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-blue-600 hover:underline"
+				>
+					Website
+				</a>
+			)}
+
+			{pass.data.description && (
+				<p class="mt-4 text-gray-700">{pass.data.description}</p>
+			)}
+
+			<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+				<div class="bg-gray-50 p-4 rounded-lg">
+					<h3 class="font-bold text-lg mb-2">Pricing</h3>
+					<div class="space-y-2">
+						<div class="flex justify-between">
+							<span class="text-gray-600">Regular Price:</span>
+							<span class="font-medium">{formatPrice(pass.data.price)}</span>
+						</div>
+						{pass.data.earlyBirdPrice && (
+							<div class="flex justify-between">
+								<span class="text-gray-600">Early Bird Price:</span>
+								<span class="font-medium">{formatPrice(pass.data.earlyBirdPrice)}</span>
+							</div>
+						)}
+						{pass.data.onSaleDate && (
+							<div class="flex justify-between">
+								<span class="text-gray-600">On Sale:</span>
+								<span class="font-medium">{formatDate(pass.data.onSaleDate as string)}</span>
+							</div>
+						)}
+					</div>
+				</div>
+
+				{pass.data.resorts && pass.data.resorts.length > 0 && (
+					<div class="bg-gray-50 p-4 rounded-lg">
+						<h3 class="font-bold text-lg mb-2">Resort Access</h3>
+						<div class="space-y-2">
+							<div class="flex justify-between">
+								<span class="text-gray-600">Total Resorts:</span>
+								<span class="font-medium">{totalResorts}</span>
+							</div>
+							<div class="flex justify-between">
+								<span class="text-gray-600">Unlimited Access:</span>
+								<span class="font-medium">{unlimitedResorts}</span>
+							</div>
+							<div class="flex justify-between">
+								<span class="text-gray-600">Limited Access:</span>
+								<span class="font-medium">{limitedResorts}</span>
+							</div>
+						</div>
+					</div>
+				)}
+			</div>
+
+			{pass.data.resorts && pass.data.resorts.length > 0 && (
+				<div class="mt-6">
+					<h3 class="font-bold mb-2">Locations:</h3>
+					<div class="flex flex-wrap gap-2">
+						{Array.from(resortsByLocation.keys()).map(location => (
+							<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+								{location} ({resortsByLocation.get(location)?.length})
+							</span>
+						))}
+					</div>
+				</div>
+			)}
+		</div>
+
+
+
+		<div class="prose max-w-none mt-8">
+			<Content />
+		</div>
+
+{pass.data.resorts && pass.data.resorts.length > 0 && (
+			<div class="bg-white rounded-lg shadow-lg p-8 mt-8">
+				<h2 class="text-2xl font-bold mb-4">Participating Resorts</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+					{pass.data.resorts.map(resort => {
+						// Try to find the ski area in our collection
+						const skiArea = skiAreasMap.get(resort.name);
+						const resortUrl = skiArea
+							? `${baseUrl}/ski-areas/${skiArea.slug}`
+							: null;
+
+						return (
+							<div class="bg-gray-50 p-4 rounded border border-gray-200">
+								<h3 class="font-bold text-lg">
+									{resortUrl ? (
+										<a href={resortUrl} class="text-blue-600 hover:underline">
+											{resort.name}
+										</a>
+									) : (
+										resort.name
+									)}
+								</h3>
+								<p class="text-gray-600">{resort.location}</p>
+								<p class="text-sm mt-1">
+									<span class="font-medium">Days:</span> {resort.days}
+								</p>
+							</div>
+						);
+					})}
+				</div>
+			</div>
+		)}
+
+	</div>
+</Layout>

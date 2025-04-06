@@ -30,7 +30,41 @@ const owners = defineCollection({
 	}),
 });
 
+const passFamilies = defineCollection({
+	type: 'content',
+	schema: z.object({
+		name: z.string(),
+		description: z.string().optional(),
+		website: z.string().optional(),
+		logo: z.string().optional(),
+	}),
+});
+
+const passes = defineCollection({
+	type: 'content',
+	schema: z.object({
+		name: z.string(),
+		season: z.string(),
+		passFamily: z.string().optional(),
+		price: z.union([z.string(), z.number()]).optional(),
+		earlyBirdPrice: z.union([z.string(), z.number()]).optional(),
+		onSaleDate: z.union([z.string(), z.date()]).optional(),
+		description: z.string().optional(),
+		website: z.string().optional(),
+		logo: z.string().optional(),
+		resorts: z.array(
+			z.object({
+				name: z.string(),
+				location: z.string(),
+				days: z.union([z.string(), z.number()]),
+			})
+		).optional(),
+	}),
+});
+
 export const collections = {
 	'ski-areas': skiAreas,
 	'owners': owners,
+	'pass-families': passFamilies,
+	passes: passes,
 };

@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+// Get all ski areas
+const skiAreas = await getCollection('ski-areas');
+
+// Group ski areas by state
+const skiAreasByState = new Map<string, Array<CollectionEntry<'ski-areas'>>>();
+
+skiAreas.forEach((area: CollectionEntry<'ski-areas'>) => {
+	const state = area.data.state;
+	if (!skiAreasByState.has(state)) {
+		skiAreasByState.set(state, []);
+	}
+	skiAreasByState.get(state)?.push(area);
+});
+
+interface StateGroup {
+	state: string;
+	count: number;
+	areas: Array<CollectionEntry<'ski-areas'>>;
+}
+
+// Convert to array and sort by state
+const states: StateGroup[] = Array.from(skiAreasByState.entries())
+	.map(([state, areas]) => ({
+		state,
+		count: areas.length,
+		areas: areas.sort((a, b) => a.data.mountain.localeCompare(b.data.mountain))
+	}))
+	.sort((a, b) => a.state.localeCompare(b.state));
+---
+
+<Layout title="Resorts - Storm Skiing Pass Tracker 5002">
+	<div class="max-w-4xl mx-auto">
+		<div class="mb-8">
+			<a href={baseUrl} class="text-blue-600 hover:underline">&larr; Back to Home</a>
+		</div>
+
+		<h1 class="text-4xl font-bold mb-8">Resorts</h1>
+
+		<div class="grid gap-6">
+			{states.map(({ state, count, areas }) => (
+				<div class="bg-white rounded-lg shadow-lg p-6">
+					<div class="flex justify-between items-center mb-4">
+						<h2 class="text-2xl font-bold">
+							{state}
+						</h2>
+						<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+							{count} {count === 1 ? 'Resort' : 'Resorts'}
+						</span>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+						{areas.map(area => (
+							<div class="bg-gray-50 p-3 rounded border border-gray-200">
+								<h3 class="font-bold">
+									<a href={`${baseUrl}/ski-areas/${area.slug}`} class="text-blue-600 hover:underline">
+										{area.data.mountain}
+									</a>
+								</h3>
+								{area.data.verticalDrop && (
+									<p class="text-sm text-gray-600">
+										<span class="font-medium">Vertical:</span> {area.data.verticalDrop}
+									</p>
+								)}
+								{area.data.skiableAcres && (
+									<p class="text-sm text-gray-600">
+										<span class="font-medium">Acres:</span> {area.data.skiableAcres}
+									</p>
+								)}
+							</div>
+						))}
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</Layout>
