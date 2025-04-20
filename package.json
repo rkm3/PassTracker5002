@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "generate:posts": "node scripts/generate-posts.mjs"
+    "generate:posts": "node scripts/generate-posts.mjs",
+    "generate:pubdates": "node scripts/postPubDates.mjs"
   },
   "dependencies": {
     "@types/cheerio": "^0.22.35",

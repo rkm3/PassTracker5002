@@ -2237,32 +2237,6 @@
       "title": "Passes"
     }
   ],
-  "/ski-areas/canada/british-columbia/whistler-blackcomb": [
-    {
-      "url": "/ski-areas/canada/british-columbia",
-      "title": "Ski Areas in British Columbia, Canada"
-    },
-    {
-      "url": "/countries/canada/british-columbia",
-      "title": "Ski Areas in British Columbia, Canada | Countries"
-    }
-  ],
-  "/countries/canada": [
-    {
-      "url": "/countries/canada/british-columbia",
-      "title": "Ski Areas in British Columbia, Canada | Countries"
-    }
-  ],
-  "/countries/canada/british-columbia": [
-    {
-      "url": "/countries/canada",
-      "title": "Ski Areas in Canada"
-    },
-    {
-      "url": "/ski-areas/canada/british-columbia/whistler-blackcomb",
-      "title": "Whistler-Blackcomb"
-    }
-  ],
   "/ski-areas/usa/alabama/cloudmont": [
     {
       "url": "/posts/12-us-ski-areas-re-opened-this-winter",
@@ -14535,6 +14509,32 @@
       "title": "Ski Areas in Wyoming, USA | Countries"
     }
   ],
+  "/ski-areas/canada/british-columbia/whistler-blackcomb": [
+    {
+      "url": "/ski-areas/canada/british-columbia",
+      "title": "Ski Areas in British Columbia, Canada"
+    },
+    {
+      "url": "/countries/canada/british-columbia",
+      "title": "Ski Areas in British Columbia, Canada | Countries"
+    }
+  ],
+  "/countries/canada": [
+    {
+      "url": "/countries/canada/british-columbia",
+      "title": "Ski Areas in British Columbia, Canada | Countries"
+    }
+  ],
+  "/countries/canada/british-columbia": [
+    {
+      "url": "/countries/canada",
+      "title": "Ski Areas in Canada"
+    },
+    {
+      "url": "/ski-areas/canada/british-columbia/whistler-blackcomb",
+      "title": "Whistler-Blackcomb"
+    }
+  ],
   "/ski-areas/canada": [
     {
       "url": "/ski-areas",
@@ -16343,13 +16343,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-108-vail-mountain-vice-president": [
+  "/posts/podcast-107-leitner-poma-of-america": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-107-leitner-poma-of-america": [
+  "/posts/podcast-108-vail-mountain-vice-president": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -16397,13 +16397,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/jay-peak-auction-set-for-11-am-wednesday": [
+  "/posts/jay-peak-auction-set-for-wednesday": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/jay-peak-auction-set-for-wednesday": [
+  "/posts/jay-peak-auction-set-for-11-am-wednesday": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -16775,7 +16775,7 @@
       "title": "All Posts"
     }
   ],
-  "/posts/2022-23-mountain-collective-shakeup": [
+  "/posts/2022-23-indy-pass-prices-stay-flat": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -16787,7 +16787,7 @@
       "title": "All Posts"
     }
   ],
-  "/posts/2022-23-indy-pass-prices-stay-flat": [
+  "/posts/2022-23-mountain-collective-shakeup": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -17441,13 +17441,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/covid-19-and-skiing-podcast-12-ski": [
+  "/posts/covid-19-and-skiing-podcast-11-schweitzer": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/covid-19-and-skiing-podcast-11-schweitzer": [
+  "/posts/covid-19-and-skiing-podcast-12-ski": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -17627,13 +17627,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/the-northeast-multipass-wish-list": [
+  "/posts/the-northeast-multipass-wish-list-9c3": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/the-northeast-multipass-wish-list-9c3": [
+  "/posts/the-northeast-multipass-wish-list": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -17927,13 +17927,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/arapahoe-basin-and-the-less-is-more": [
+  "/posts/and-your-season-pass-shall-be-discounted": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/and-your-season-pass-shall-be-discounted": [
+  "/posts/arapahoe-basin-and-the-less-is-more": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -17951,13 +17951,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/bring-your-own-toilet-paper-why-the": [
+  "/posts/boyne-to-include-ikon-base-pass-with": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/boyne-to-include-ikon-base-pass-with": [
+  "/posts/bring-your-own-toilet-paper-why-the": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -17970,12 +17970,6 @@
     }
   ],
   "/posts/covid-19-and-skiing-podcast-10-nsaa": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
-  "/posts/covid-19-and-skiing-podcast-2-boyne": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -17999,6 +17993,12 @@
       "title": "All Posts"
     }
   ],
+  "/posts/covid-19-and-skiing-podcast-2-boyne": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
   "/posts/covid-19-and-skiing-podcast-6-shaggys": [
     {
       "url": "/posts",
@@ -18011,13 +18011,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/covid-19-and-skiing-podcast-8-mt": [
+  "/posts/covid-19-and-skiing-podcast-9-alterra": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/covid-19-and-skiing-podcast-9-alterra": [
+  "/posts/covid-19-and-skiing-podcast-8-mt": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -18113,13 +18113,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/liftopia-dodges-involuntary-chapter": [
+  "/posts/liftopia-again-hits-back-at-extreme": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/liftopia-again-hits-back-at-extreme": [
+  "/posts/liftopia-dodges-involuntary-chapter": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -18329,13 +18329,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/skiing-on-weekends-sucks-coronavirus": [
+  "/posts/skiing-resists-the-great-american": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/skiing-resists-the-great-american": [
+  "/posts/skiing-on-weekends-sucks-coronavirus": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -18479,13 +18479,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/whiteface-gore-belleayres-ny-ski3": [
+  "/posts/when-a-certain-type-of-skiing-died": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/when-a-certain-type-of-skiing-died": [
+  "/posts/whiteface-gore-belleayres-ny-ski3": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -18541,16 +18541,6 @@
     {
       "url": "/ski-areas/usa",
       "title": "Ski Areas in USA"
-    }
-  ],
-  "/ski-areas/canada/british-columbia": [
-    {
-      "url": "/ski-areas/canada",
-      "title": "Ski Areas in Canada"
-    },
-    {
-      "url": "/ski-areas/canada/british-columbia/whistler-blackcomb",
-      "title": "Whistler-Blackcomb"
     }
   ],
   "/ski-areas/usa/alabama": [
@@ -20789,6 +20779,16 @@
     {
       "url": "/ski-areas/usa/wyoming/white-pine",
       "title": "White Pine"
+    }
+  ],
+  "/ski-areas/canada/british-columbia": [
+    {
+      "url": "/ski-areas/canada",
+      "title": "Ski Areas in Canada"
+    },
+    {
+      "url": "/ski-areas/canada/british-columbia/whistler-blackcomb",
+      "title": "Whistler-Blackcomb"
     }
   ],
   "/passes": [

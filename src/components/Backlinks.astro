@@ -52,7 +52,10 @@ let referringPages: readonly BacklinkEntry[] = [];
 let backlinksData: Record<string, BacklinkEntry[]> | null = null;
 const projectRoot = process.cwd();
 const backlinksFilePath = path.join(projectRoot, 'src', 'data', 'backlinks.json');
+const postPubDatesFilePath = path.join(projectRoot, 'src', 'data', 'postPubDates.json'); // Path to the new JSON
+let postPubDates: Record<string, string> = {}; // Map to store URL -> pubDate
 
+// Load Backlinks Data
 try {
     // Check if file exists before trying to read
     try {
@@ -81,6 +84,21 @@ try {
     console.error('[Backlinks Component] Error processing backlinks data:', error);
 }
 
+// Load Post Publication Dates
+try {
+    await fs.access(postPubDatesFilePath);
+    const pubDatesJsonContent = await fs.readFile(postPubDatesFilePath, 'utf-8');
+    postPubDates = JSON.parse(pubDatesJsonContent);
+} catch (error: any) {
+    if (error.code === 'ENOENT') {
+        console.warn(`[Backlinks Component] postPubDates.json not found at ${postPubDatesFilePath}. Skipping pub date display.`);
+    } else {
+        console.error('[Backlinks Component] Error reading or parsing postPubDates.json:', error);
+    }
+    postPubDates = {}; // Ensure it's an empty object on error
+}
+
+
 // Group backlinks by type
 const groupedBacklinks: Record<string, BacklinkEntry[]> = {};
 for (const entry of referringPages) {
@@ -92,7 +110,7 @@ for (const entry of referringPages) {
 }
 
 // Define preferred order for sections
-const typeOrder = ['Owners', 'Ski Areas', 'Passes', 'Blog Posts', 'Other Pages'];
+const typeOrder = ['Owners', 'Ski Areas', 'Passes', 'Storm Posts', 'Other Pages']; // Renamed 'Blog Posts' to 'Storm Posts' for consistency
 
 // Sort the grouped backlinks based on the preferred order
 const sortedGroupedBacklinks = Object.entries(groupedBacklinks).sort(([typeA], [typeB]) => {
@@ -108,6 +126,28 @@ const sortedGroupedBacklinks = Object.entries(groupedBacklinks).sort(([typeA], [
 
 const baseHref = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
 const showBacklinks = sortedGroupedBacklinks.length > 0;
+
+// Helper function to format date string (YYYY-MM-DDTHH:mm:ss.sssZ) to YYYY-MM-DD
+const formatDate = (dateString: string | undefined): string | null => {
+    if (!dateString) return null;
+    try {
+        const date = new Date(dateString);
+        // Check if date is valid after parsing
+        if (isNaN(date.getTime())) {
+            console.warn(`[Backlinks Component] Invalid date format encountered: ${dateString}`);
+            return null; // Return null for invalid dates
+        }
+        // Format to YYYY-MM-DD. Adding 1 to month because getMonth() is 0-indexed.
+        const year = date.getFullYear();
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const day = date.getDate().toString().padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    } catch (e) {
+        console.error(`[Backlinks Component] Error formatting date: ${dateString}`, e);
+        return null; // Return null on formatting error
+    }
+};
+
 ---
 {showBacklinks && (
   <div class="mt-12 pt-8 border-t border-gray-200">
@@ -116,11 +156,20 @@ const showBacklinks = sortedGroupedBacklinks.length > 0;
       <div class="mb-6 last:mb-0"> {/* Add margin between sections */}
         <h3 class="text-xl font-medium mb-3">{type} ({entries.length})</h3> {/* Show count */}
         <ul class="list-disc list-inside space-y-2">
-          {entries.map((entry: BacklinkEntry) => (
-            <li>
-              <a href={`${baseHref}${entry.url.startsWith('/') ? entry.url.substring(1) : entry.url}`} class="text-blue-600 hover:underline">{entry.title}</a>
-            </li>
-          ))}
+          {entries.map((entry: BacklinkEntry) => {
+            const isPost = entry.url.startsWith('/posts/');
+            const pubDate = isPost ? postPubDates[entry.url] : undefined;
+            const formattedDate = formatDate(pubDate);
+            return (
+              <li>
+                <a href={`${baseHref}${entry.url.startsWith('/') ? entry.url.substring(1) : entry.url}`} class="text-blue-600 hover:underline">{entry.title}</a>
+                {/* Display formatted date if it exists */}
+                {formattedDate && (
+                  <span class="text-sm text-gray-500 ml-2">{formattedDate}</span>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </div>
     ))}
