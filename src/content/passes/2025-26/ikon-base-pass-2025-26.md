@@ -108,12 +108,13 @@ The Ikon Base Pass for the 2025-26 season provides access to Alterra Mountain Co
 ## Partner Resorts
 
 The Ikon Base Pass includes 5 days at each of the following partner resorts:
-- Crystal Mountain (Washington)
-- Solitude (Utah)
-- Brighton (Utah)
-- Deer Valley (Utah)
-- Alta (Utah)
-- Snowbird (Utah)
-- Jackson Hole (Wyoming)
-- Big Sky (Montana)
-- Revelstoke (British Columbia, Canada)
+
+- [Crystal Mountain (Washington)](@crystal-mountain)
+- [Solitude (Utah)](@solitude)
+- [Brighton (Utah)](@brighton)
+- [Deer Valley (Utah)](@deer-valley)
+- [Alta (Utah)](@alta)
+- [Snowbird (Utah)](@snowbird)
+- [Jackson Hole (Wyoming)](@jackson-hole)
+- [Big Sky (Montana)](@big-sky)
+- [Revelstoke (British Columbia, Canada)](@revelstoke)

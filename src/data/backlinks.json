@@ -14641,7 +14641,31 @@
       "title": "Ski Areas in Wyoming, USA | Countries"
     }
   ],
-  "/ski-areas/canada/british-columbia/whistler-blackcomb": [
+  "/ski-areas/canada/british-columbia/revelstoke": [
+    {
+      "url": "/passes/2024-25/ikon-base-pass-2024-25",
+      "title": "Ikon Base Pass 2025-25"
+    },
+    {
+      "url": "/passes/2025-26/ikon-base-pass-2025-26",
+      "title": "Ikon Base Pass 2025-26"
+    },
+    {
+      "url": "/passes/2024-25/ikon-pass-2024-25",
+      "title": "Ikon Pass 2024-25"
+    },
+    {
+      "url": "/passes/2025-26/ikon-pass-2025-26",
+      "title": "Ikon Pass 2025-26"
+    },
+    {
+      "url": "/passes/2024-25/ikon-session-pass-2024-25",
+      "title": "Ikon Session Pass 2024-25"
+    },
+    {
+      "url": "/passes/2025-26/mountain-collective-2025-26",
+      "title": "Mountain Collective 2025-26"
+    },
     {
       "url": "/ski-areas/canada/british-columbia",
       "title": "Ski Areas in British Columbia, Canada"
@@ -14667,7 +14691,21 @@
       "title": "Whistler-Blackcomb"
     }
   ],
+  "/ski-areas/canada/british-columbia/whistler-blackcomb": [
+    {
+      "url": "/ski-areas/canada/british-columbia",
+      "title": "Ski Areas in British Columbia, Canada"
+    },
+    {
+      "url": "/countries/canada/british-columbia",
+      "title": "Ski Areas in British Columbia, Canada | Countries"
+    }
+  ],
   "/ski-areas/canada": [
+    {
+      "url": "/ski-areas/canada/british-columbia/revelstoke",
+      "title": "Revelstoke"
+    },
     {
       "url": "/ski-areas",
       "title": "Ski Areas by Country"
@@ -14722,6 +14760,10 @@
     }
   ],
   "/ski-areas/canada/british-columbia": [
+    {
+      "url": "/ski-areas/canada/british-columbia/revelstoke",
+      "title": "Revelstoke"
+    },
     {
       "url": "/ski-areas/canada",
       "title": "Ski Areas in Canada"
@@ -18827,19 +18869,25 @@
       "title": "All Posts"
     }
   ],
-  "/posts/pacific-group-resorts-wins-auction": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
   "/posts/park-city-locals-will-be-able-to": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
+  "/posts/pacific-group-resorts-wins-auction": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
   "/posts/podcast-100-nubs-nob-general-manager": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
+  "/posts/podcast-98-colorado-sun-reporter": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -18852,12 +18900,6 @@
     }
   ],
   "/posts/podcast-97-pats-peak-general-manager": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
-  "/posts/podcast-98-colorado-sun-reporter": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19121,13 +19163,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-93-perfect-north-slopes-indiana": [
+  "/posts/podcast-92-alterra-mountain-company": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-92-alterra-mountain-company": [
+  "/posts/podcast-93-perfect-north-slopes-indiana": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19169,12 +19211,6 @@
       "title": "All Posts"
     }
   ],
-  "/posts/2022-23-season-pass-sales-begin-heres": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
   "/posts/2022-23-epic-pass-prices-tick-up": [
     {
       "url": "/posts",
@@ -19182,6 +19218,12 @@
     }
   ],
   "/posts/2022-23-mountain-collective-shakeup": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
+  "/posts/2022-23-season-pass-sales-begin-heres": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19367,13 +19409,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-82-arapahoe-basin-chief-operating": [
+  "/posts/podcast-81-big-sky-president-and": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-81-big-sky-president-and": [
+  "/posts/podcast-82-arapahoe-basin-chief-operating": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19475,13 +19517,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/2020-21-northeast-ski-season-in-review": [
+  "/posts/2020-21-northeast-ski-season-in-review-a54": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/2020-21-northeast-ski-season-in-review-a54": [
+  "/posts/2020-21-northeast-ski-season-in-review": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19631,6 +19673,12 @@
       "title": "All Posts"
     }
   ],
+  "/posts/podcast-51-alpine-x-ceo-john-emery": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
   "/posts/podcast-50-caberfae-peaks-michigan": [
     {
       "url": "/posts",
@@ -19643,13 +19691,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-51-alpine-x-ceo-john-emery": [
+  "/posts/podcast-53-taos-ski-valley-ceo-david": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-53-taos-ski-valley-ceo-david": [
+  "/posts/podcast-54-aspen-skiing-company-ceo": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19662,12 +19710,6 @@
     }
   ],
   "/posts/podcast-56-mt-buller-australia-gm": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
-  "/posts/podcast-54-aspen-skiing-company-ceo": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19781,19 +19823,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/10-moments-that-redefined-northeast": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
   "/posts/11-great-northeast-ski-season-passes": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/2020-21-ski-season-winds-down-on": [
+  "/posts/10-moments-that-redefined-northeast": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19811,6 +19847,12 @@
       "title": "All Posts"
     }
   ],
+  "/posts/2020-21-ski-season-winds-down-on": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
   "/posts/an-abandoned-ski-area-fades-back": [
     {
       "url": "/posts",
@@ -19823,25 +19865,25 @@
       "title": "All Posts"
     }
   ],
-  "/posts/catalate-bets-that-ski-areas-value": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
   "/posts/camelback-manager-ksl-resorts-adds": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/covid-19-and-skiing-podcast-12-ski": [
+  "/posts/catalate-bets-that-ski-areas-value": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
   "/posts/covid-19-and-skiing-podcast-11-schweitzer": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
+  "/posts/covid-19-and-skiing-podcast-12-ski": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19901,19 +19943,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/photo-essay-the-mountaintop-patrol": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
   "/posts/pico-follows-killington-with-subscription": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-34-gunstock-president-and": [
+  "/posts/photo-essay-the-mountaintop-patrol": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19926,6 +19962,12 @@
     }
   ],
   "/posts/podcast-36-windham-mountain-president": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
+  "/posts/podcast-34-gunstock-president-and": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19955,6 +19997,12 @@
       "title": "All Posts"
     }
   ],
+  "/posts/podcast-44-west-mountain-ny-ownersoperators": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
   "/posts/podcast-45-indy-pass-president-and": [
     {
       "url": "/posts",
@@ -19962,12 +20010,6 @@
     }
   ],
   "/posts/podcast-43-nsaa-president-and-ceo": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
-  "/posts/podcast-44-west-mountain-ny-ownersoperators": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20087,13 +20129,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-32-hermitage-club-general": [
+  "/posts/podcast-33-powder-magazine-editor": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-33-powder-magazine-editor": [
+  "/posts/podcast-32-hermitage-club-general": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20153,13 +20195,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-28-sugarbush-president-and": [
+  "/posts/podcast-27-jay-peak-president-and": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-27-jay-peak-president-and": [
+  "/posts/podcast-28-sugarbush-president-and": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20171,13 +20213,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-30-saddleback-gm-and-ceo": [
+  "/posts/podcast-31-bousquet-owners-and-management": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-31-bousquet-owners-and-management": [
+  "/posts/podcast-30-saddleback-gm-and-ceo": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20291,19 +20333,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/alterra-extends-ikon-pass-deferral": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
   "/posts/alterra-doubles-ikon-pass-renewal": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/alterra-rolls-unused-2019-20-ikon": [
+  "/posts/alterra-extends-ikon-pass-deferral": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20315,19 +20351,25 @@
       "title": "All Posts"
     }
   ],
+  "/posts/alterra-rolls-unused-2019-20-ikon": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
   "/posts/and-it-is-foretold-that-one-day-skiing": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/arapahoe-basin-and-the-less-is-more": [
+  "/posts/and-your-season-pass-shall-be-discounted": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/and-your-season-pass-shall-be-discounted": [
+  "/posts/arapahoe-basin-and-the-less-is-more": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20345,25 +20387,25 @@
       "title": "All Posts"
     }
   ],
-  "/posts/boyne-to-include-ikon-base-pass-with": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
   "/posts/bring-your-own-toilet-paper-why-the": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/covid-19-and-skiing-podcast-1-author": [
+  "/posts/boyne-to-include-ikon-base-pass-with": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
   "/posts/covid-19-and-skiing-podcast-10-nsaa": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
+  "/posts/covid-19-and-skiing-podcast-1-author": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20393,25 +20435,25 @@
       "title": "All Posts"
     }
   ],
-  "/posts/covid-19-and-skiing-podcast-7-doppelmayr": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
   "/posts/covid-19-and-skiing-podcast-6-shaggys": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/covid-19-and-skiing-podcast-8-mt": [
+  "/posts/covid-19-and-skiing-podcast-7-doppelmayr": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
   "/posts/covid-19-and-skiing-podcast-9-alterra": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
+  "/posts/covid-19-and-skiing-podcast-8-mt": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20519,13 +20561,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/liftopia-has-not-paid-magic-plattekill": [
+  "/posts/liftopia-to-be-acquired-promises": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/liftopia-to-be-acquired-promises": [
+  "/posts/liftopia-has-not-paid-magic-plattekill": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20543,13 +20585,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/nobody-cares-about-skiing-anymore": [
+  "/posts/next-seasons-casualties-begin-to": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/next-seasons-casualties-begin-to": [
+  "/posts/nobody-cares-about-skiing-anymore": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20645,13 +20687,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-2-danielle-and-laszlo-vajtay": [
+  "/posts/podcast-20-mountain-gazette-owner": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-20-mountain-gazette-owner": [
+  "/posts/podcast-2-danielle-and-laszlo-vajtay": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20717,6 +20759,12 @@
       "title": "All Posts"
     }
   ],
+  "/posts/skiing-and-the-freedom-from-winning": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
   "/posts/skiing-on-weekends-sucks-coronavirus": [
     {
       "url": "/posts",
@@ -20724,12 +20772,6 @@
     }
   ],
   "/posts/skiing-resists-the-great-american": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
-  "/posts/skiing-and-the-freedom-from-winning": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20747,13 +20789,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/that-one-time-when-everybody-was": [
+  "/posts/that-one-time-when-the-ski-industry": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/that-one-time-when-the-ski-industry": [
+  "/posts/that-one-time-when-everybody-was": [
     {
       "url": "/posts",
       "title": "All Posts"
