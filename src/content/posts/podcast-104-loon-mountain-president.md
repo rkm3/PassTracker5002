@@ -8,4 +8,5 @@ tags: []
 changefreq: monthly
 ---
 
-<!-- Add post content below -->
+
+[Loon Mountain](@loon)
