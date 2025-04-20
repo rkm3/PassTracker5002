@@ -4,15 +4,16 @@ country: USA
 mountain: Arapahoe Basin
 openToPublic: 'Yes'
 owner: Alterra
-passAffiliations: Ikon, Left Epic
-skiableAcres: 1,428
+passAffiliations: 'Ikon, Left Epic'
+skiableAcres: '1,428'
 skied: Summer
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,695
+verticalDrop: '1,695'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

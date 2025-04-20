@@ -4,7 +4,7 @@ country: USA
 mountain: Loveland Valley
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Powder Alliance
+passAffiliations: 'Indy, Powder Alliance'
 skiableAcres: ''
 skied: 'No'
 state: Colorado
@@ -13,6 +13,7 @@ verticalDrop: '819'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

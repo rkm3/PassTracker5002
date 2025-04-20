@@ -4,15 +4,16 @@ country: USA
 mountain: Bogus Basin
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Powder Alliance, Freedom
-skiableAcres: 2,600
+passAffiliations: 'Powder Alliance, Freedom'
+skiableAcres: '2,600'
 skied: 'No'
 state: Idaho
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,800
+verticalDrop: '1,800'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

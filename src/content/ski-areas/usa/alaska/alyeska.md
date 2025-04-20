@@ -5,14 +5,15 @@ mountain: Alyeska
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: Ikon
-skiableAcres: 1,610
+skiableAcres: '1,610'
 skied: 'No'
 state: Alaska
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,500
+verticalDrop: '2,500'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

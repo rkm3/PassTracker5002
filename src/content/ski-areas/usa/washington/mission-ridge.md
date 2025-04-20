@@ -4,15 +4,16 @@ country: USA
 mountain: Mission Ridge
 openToPublic: 'Yes'
 owner: Larry Scrivanich
-passAffiliations: Indy, Powder Alliance
-skiableAcres: 2,000
+passAffiliations: 'Indy, Powder Alliance'
+skiableAcres: '2,000'
 skied: 'No'
 state: Washington
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,250
+verticalDrop: '2,250'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

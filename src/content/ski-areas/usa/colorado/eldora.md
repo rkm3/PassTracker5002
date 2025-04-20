@@ -9,10 +9,11 @@ skiableAcres: '680'
 skied: 'Yes'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,400
+verticalDrop: '1,400'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -5,14 +5,15 @@ mountain: Bridger Bowl
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: ''
-skiableAcres: 2,000
+skiableAcres: '2,000'
 skied: 'Yes'
 state: Montana
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,700
+verticalDrop: '2,700'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

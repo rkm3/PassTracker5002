@@ -4,7 +4,7 @@ country: USA
 mountain: Dartmouth Skiway
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Uphill New England
+passAffiliations: 'Indy, Uphill New England'
 skiableAcres: '104'
 skied: 'No'
 state: New Hampshire
@@ -13,6 +13,7 @@ verticalDrop: '968'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

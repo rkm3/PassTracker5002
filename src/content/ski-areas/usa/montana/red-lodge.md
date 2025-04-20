@@ -5,14 +5,15 @@ mountain: Red Lodge
 openToPublic: 'Yes'
 owner: JMA Ventures
 passAffiliations: Indy
-skiableAcres: 1,635
+skiableAcres: '1,635'
 skied: 'Yes'
 state: Montana
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,400
+verticalDrop: '2,400'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

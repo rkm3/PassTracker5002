@@ -9,10 +9,11 @@ skiableAcres: '100'
 skied: 'Yes'
 state: Pennsylvania
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,073
+verticalDrop: '1,073'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

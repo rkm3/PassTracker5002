@@ -4,15 +4,16 @@ country: USA
 mountain: Lost Trail
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Powder Alliance
-skiableAcres: 1,800
+passAffiliations: 'Indy, Powder Alliance'
+skiableAcres: '1,800'
 skied: 'No'
 state: Montana
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,800
+verticalDrop: '1,800'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

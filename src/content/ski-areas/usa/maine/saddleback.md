@@ -4,15 +4,16 @@ country: USA
 mountain: Saddleback
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Uphill New England
+passAffiliations: 'Indy, Uphill New England'
 skiableAcres: '600'
 skied: 'Yes'
 state: Maine
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,000
+verticalDrop: '2,000'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

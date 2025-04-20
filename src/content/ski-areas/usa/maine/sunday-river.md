@@ -4,15 +4,16 @@ country: USA
 mountain: Sunday River
 openToPublic: 'Yes'
 owner: Boyne Resorts
-passAffiliations: Ikon, Mountain Collective, New England Pass
-skiableAcres: 1,184
+passAffiliations: 'Ikon, Mountain Collective, New England Pass'
+skiableAcres: '1,184'
 skied: 'Yes'
 state: Maine
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,350
+verticalDrop: '2,350'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

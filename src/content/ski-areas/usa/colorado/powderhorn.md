@@ -5,14 +5,15 @@ mountain: Powderhorn
 openToPublic: 'Yes'
 owner: Pacific Group Resorts
 passAffiliations: Indy
-skiableAcres: 1,600
+skiableAcres: '1,600'
 skied: 'No'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,650
+verticalDrop: '1,650'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

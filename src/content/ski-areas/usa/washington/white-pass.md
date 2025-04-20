@@ -4,15 +4,16 @@ country: USA
 mountain: White Pass
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Powder Alliance
-skiableAcres: 1,402
+passAffiliations: 'Indy, Powder Alliance'
+skiableAcres: '1,402'
 skied: 'No'
 state: Washington
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,050
+verticalDrop: '2,050'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

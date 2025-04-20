@@ -4,7 +4,7 @@ country: USA
 mountain: King Pine
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy Allied, Uphill New England
+passAffiliations: 'Indy Allied, Uphill New England'
 skiableAcres: '45'
 skied: 'Yes'
 state: New Hampshire
@@ -13,6 +13,7 @@ verticalDrop: '350'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

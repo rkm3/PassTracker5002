@@ -5,14 +5,15 @@ mountain: Great Divide
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: ''
-skiableAcres: 1,600
+skiableAcres: '1,600'
 skied: 'Yes'
 state: Montana
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,500
+verticalDrop: '1,500'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

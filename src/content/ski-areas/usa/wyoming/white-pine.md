@@ -9,10 +9,11 @@ skiableAcres: '370'
 skied: 'No'
 state: Wyoming
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,100
+verticalDrop: '1,100'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

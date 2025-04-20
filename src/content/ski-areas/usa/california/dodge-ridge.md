@@ -4,15 +4,16 @@ country: USA
 mountain: Dodge Ridge
 openToPublic: 'Yes'
 owner: California Mountain Resort Company
-passAffiliations: Indy, Powder Alliance
+passAffiliations: 'Indy, Powder Alliance'
 skiableAcres: '862'
 skied: 'No'
 state: California
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,600
+verticalDrop: '1,600'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -4,15 +4,16 @@ country: USA
 mountain: Bolton Valley
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Uphill New England
+passAffiliations: 'Indy, Uphill New England'
 skiableAcres: '300'
 skied: 'Yes'
 state: Vermont
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,701
+verticalDrop: '1,701'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

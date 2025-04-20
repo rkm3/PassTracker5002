@@ -4,15 +4,16 @@ country: USA
 mountain: 'Snoqualmie: Alpental'
 openToPublic: 'Yes'
 owner: Boyne Resorts
-passAffiliations: Ikon, New England Pass
+passAffiliations: 'Ikon, New England Pass'
 skiableAcres: '875'
 skied: 'Yes'
 state: Washington
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,280
+verticalDrop: '2,280'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

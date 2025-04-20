@@ -5,14 +5,15 @@ mountain: Brundage
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: Indy
-skiableAcres: 1,920
+skiableAcres: '1,920'
 skied: 'No'
 state: Idaho
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,921
+verticalDrop: '1,921'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

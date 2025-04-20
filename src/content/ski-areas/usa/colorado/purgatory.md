@@ -5,14 +5,15 @@ mountain: Purgatory
 openToPublic: 'Yes'
 owner: Mountain Capital Partners
 passAffiliations: Power
-skiableAcres: 1,635
+skiableAcres: '1,635'
 skied: 'No'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,029
+verticalDrop: '2,029'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -4,15 +4,16 @@ country: USA
 mountain: Buttermilk
 openToPublic: 'Yes'
 owner: Aspen Skiing Company
-passAffiliations: Ikon, Mountain Collective
+passAffiliations: 'Ikon, Mountain Collective'
 skiableAcres: '435'
 skied: 'Yes'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,030
+verticalDrop: '2,030'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -9,10 +9,11 @@ skiableAcres: '450'
 skied: 'Yes'
 state: Utah
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,150
+verticalDrop: '2,150'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

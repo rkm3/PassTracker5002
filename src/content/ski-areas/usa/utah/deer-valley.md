@@ -5,14 +5,15 @@ mountain: Deer Valley
 openToPublic: 'Yes'
 owner: Alterra
 passAffiliations: Ikon
-skiableAcres: 2,342
+skiableAcres: '2,342'
 skied: 'Yes'
 state: Utah
 surfaceLiftsOnly: 'No'
-verticalDrop: 3,040
+verticalDrop: '3,040'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -5,14 +5,15 @@ mountain: Grand Targhee
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: Mountain Collective
-skiableAcres: 2,602
+skiableAcres: '2,602'
 skied: 'No'
 state: Wyoming
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,270
+verticalDrop: '2,270'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

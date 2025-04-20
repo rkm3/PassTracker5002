@@ -9,10 +9,11 @@ skiableAcres: '670'
 skied: 'Yes'
 state: Vermont
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,003
+verticalDrop: '2,003'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

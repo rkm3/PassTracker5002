@@ -5,14 +5,15 @@ mountain: Mt. Rose
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: ''
-skiableAcres: 1,200
+skiableAcres: '1,200'
 skied: 'No'
 state: Nevada
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,800
+verticalDrop: '1,800'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

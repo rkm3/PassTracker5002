@@ -4,15 +4,16 @@ country: USA
 mountain: Big Sky
 openToPublic: 'Yes'
 owner: Boyne Resorts
-passAffiliations: Ikon, Mountain Collective, New England Pass
-skiableAcres: 5,800
+passAffiliations: 'Ikon, Mountain Collective, New England Pass'
+skiableAcres: '5,800'
 skied: 'Yes'
 state: Montana
 surfaceLiftsOnly: 'No'
-verticalDrop: 4,350
+verticalDrop: '4,350'
 operated:
   '2324': true
   '2425': true
+website: 'www.bigskyresort.com'
 ---
 
 

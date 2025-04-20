@@ -4,15 +4,16 @@ country: USA
 mountain: Mount Abram
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Uphill New England
+passAffiliations: 'Indy, Uphill New England'
 skiableAcres: '170'
 skied: 'No'
 state: Maine
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,150
+verticalDrop: '1,150'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

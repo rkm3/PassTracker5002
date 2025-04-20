@@ -9,10 +9,11 @@ skiableAcres: '167'
 skied: 'Yes'
 state: New Jersey
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,040
+verticalDrop: '1,040'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

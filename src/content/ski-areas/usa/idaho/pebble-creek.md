@@ -5,14 +5,15 @@ mountain: Pebble Creek
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: ''
-skiableAcres: 1,100
+skiableAcres: '1,100'
 skied: 'No'
 state: Idaho
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,200
+verticalDrop: '2,200'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

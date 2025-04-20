@@ -4,7 +4,7 @@ country: USA
 mountain: McIntyre
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy Allied, Freedom
+passAffiliations: 'Indy Allied, Freedom'
 skiableAcres: '37'
 skied: 'Yes'
 state: New Hampshire
@@ -13,6 +13,7 @@ verticalDrop: '170'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

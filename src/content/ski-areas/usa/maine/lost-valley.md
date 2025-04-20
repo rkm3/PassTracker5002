@@ -4,7 +4,7 @@ country: USA
 mountain: Lost Valley
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Freedom
+passAffiliations: 'Indy, Freedom'
 skiableAcres: '45'
 skied: 'No'
 state: Maine
@@ -13,6 +13,7 @@ verticalDrop: '240'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

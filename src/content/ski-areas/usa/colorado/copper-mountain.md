@@ -5,14 +5,15 @@ mountain: Copper Mountain
 openToPublic: 'Yes'
 owner: Powdr
 passAffiliations: Ikon
-skiableAcres: 2,538
+skiableAcres: '2,538'
 skied: 'Yes'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,738
+verticalDrop: '2,738'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

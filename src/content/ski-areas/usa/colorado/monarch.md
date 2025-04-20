@@ -5,14 +5,15 @@ mountain: Monarch
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: Power
-skiableAcres: 1,177
+skiableAcres: '1,177'
 skied: 'No'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,162
+verticalDrop: '1,162'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

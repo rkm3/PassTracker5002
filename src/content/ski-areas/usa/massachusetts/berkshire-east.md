@@ -4,15 +4,16 @@ country: USA
 mountain: Berkshire East
 openToPublic: 'Yes'
 owner: Schaefer Family
-passAffiliations: Indy, Uphill New England
+passAffiliations: 'Indy, Uphill New England'
 skiableAcres: '180'
 skied: 'Yes'
 state: Massachusetts
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,180
+verticalDrop: '1,180'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

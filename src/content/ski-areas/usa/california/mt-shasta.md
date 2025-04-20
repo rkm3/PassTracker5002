@@ -4,15 +4,16 @@ country: USA
 mountain: Mt. Shasta
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Powder Alliance
+passAffiliations: 'Indy, Powder Alliance'
 skiableAcres: '635'
 skied: 'No'
 state: California
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,036
+verticalDrop: '2,036'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

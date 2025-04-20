@@ -5,14 +5,15 @@ mountain: Park City
 openToPublic: 'Yes'
 owner: Vail Resorts
 passAffiliations: Epic
-skiableAcres: 7,300
+skiableAcres: '7,300'
 skied: 'Yes'
 state: Utah
 surfaceLiftsOnly: 'No'
-verticalDrop: 3,226
+verticalDrop: '3,226'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -5,14 +5,15 @@ mountain: Whitefish
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: ''
-skiableAcres: 3,000
+skiableAcres: '3,000'
 skied: 'No'
 state: Montana
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,353
+verticalDrop: '2,353'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

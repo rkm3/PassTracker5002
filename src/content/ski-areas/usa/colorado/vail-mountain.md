@@ -5,14 +5,15 @@ mountain: Vail Mountain
 openToPublic: 'Yes'
 owner: Vail Resorts
 passAffiliations: Epic
-skiableAcres: 5,317
+skiableAcres: '5,317'
 skied: 'Yes'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 3,450
+verticalDrop: '3,450'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

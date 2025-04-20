@@ -5,14 +5,15 @@ mountain: Crested Butte
 openToPublic: 'Yes'
 owner: Vail Resorts
 passAffiliations: Epic
-skiableAcres: 1,547
+skiableAcres: '1,547'
 skied: 'Yes'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,775
+verticalDrop: '2,775'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

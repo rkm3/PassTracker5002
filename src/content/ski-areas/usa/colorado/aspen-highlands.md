@@ -4,15 +4,16 @@ country: USA
 mountain: Aspen Highlands
 openToPublic: 'Yes'
 owner: Aspen Skiing Company
-passAffiliations: Ikon, Mountain Collective
-skiableAcres: 1,010
+passAffiliations: 'Ikon, Mountain Collective'
+skiableAcres: '1,010'
 skied: 'Yes'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 3,635
+verticalDrop: '3,635'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

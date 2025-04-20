@@ -9,10 +9,11 @@ skiableAcres: '205'
 skied: 'No'
 state: New Mexico
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,055
+verticalDrop: '1,055'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

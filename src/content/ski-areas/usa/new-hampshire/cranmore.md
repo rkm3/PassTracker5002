@@ -4,15 +4,16 @@ country: USA
 mountain: Cranmore
 openToPublic: 'Yes'
 owner: Fairbank Group
-passAffiliations: Ikon, Uphill New England
+passAffiliations: 'Ikon, Uphill New England'
 skiableAcres: '170'
 skied: 'Yes'
 state: New Hampshire
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,200
+verticalDrop: '1,200'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

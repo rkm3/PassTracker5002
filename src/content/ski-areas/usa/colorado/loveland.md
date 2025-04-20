@@ -4,15 +4,16 @@ country: USA
 mountain: Loveland
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Powder Alliance
-skiableAcres: 1,800
+passAffiliations: 'Indy, Powder Alliance'
+skiableAcres: '1,800'
 skied: 'No'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,210
+verticalDrop: '2,210'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

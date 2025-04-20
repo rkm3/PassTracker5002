@@ -9,10 +9,11 @@ skiableAcres: '225'
 skied: 'Yes'
 state: New York
 surfaceLiftsOnly: 'Yes'
-verticalDrop: 1,200
+verticalDrop: '1,200'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

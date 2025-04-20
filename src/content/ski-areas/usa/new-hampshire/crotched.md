@@ -9,10 +9,11 @@ skiableAcres: '100'
 skied: 'Yes'
 state: New Hampshire
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,016
+verticalDrop: '1,016'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

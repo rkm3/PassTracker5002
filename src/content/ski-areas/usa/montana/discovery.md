@@ -5,14 +5,15 @@ mountain: Discovery
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: ''
-skiableAcres: 2,200
+skiableAcres: '2,200'
 skied: 'No'
 state: Montana
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,388
+verticalDrop: '2,388'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

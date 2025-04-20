@@ -9,10 +9,11 @@ skiableAcres: '655'
 skied: 'No'
 state: Nevada
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,840
+verticalDrop: '1,840'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -4,15 +4,16 @@ country: USA
 mountain: Pico
 openToPublic: 'Yes'
 owner: Phill Gross
-passAffiliations: Ikon, Uphill New England
+passAffiliations: 'Ikon, Uphill New England'
 skiableAcres: '468'
 skied: 'Yes'
 state: Vermont
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,967
+verticalDrop: '1,967'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -4,7 +4,7 @@ country: USA
 mountain: Crystal Ridge
 openToPublic: 'Yes'
 owner: Schmitz Brothers
-passAffiliations: Indy, Freedom
+passAffiliations: 'Indy, Freedom'
 skiableAcres: '30'
 skied: 'No'
 state: Wisconsin
@@ -13,6 +13,7 @@ verticalDrop: '225'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

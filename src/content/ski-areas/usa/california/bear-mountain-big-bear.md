@@ -9,10 +9,11 @@ skiableAcres: '198'
 skied: 'No'
 state: California
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,665
+verticalDrop: '1,665'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

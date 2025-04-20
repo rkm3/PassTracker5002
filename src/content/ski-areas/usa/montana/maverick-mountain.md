@@ -9,10 +9,11 @@ skiableAcres: '255'
 skied: 'No'
 state: Montana
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,020
+verticalDrop: '2,020'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -4,7 +4,7 @@ country: USA
 mountain: Caberfae Peaks
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Freedom
+passAffiliations: 'Indy, Freedom'
 skiableAcres: '200'
 skied: 'Yes'
 state: Michigan
@@ -13,6 +13,7 @@ verticalDrop: '485'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

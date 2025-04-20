@@ -5,14 +5,15 @@ mountain: June Mountain
 openToPublic: 'Yes'
 owner: Alterra
 passAffiliations: Ikon
-skiableAcres: 1,500
+skiableAcres: '1,500'
 skied: 'No'
 state: California
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,590
+verticalDrop: '2,590'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

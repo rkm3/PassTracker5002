@@ -9,10 +9,11 @@ skiableAcres: '750'
 skied: 'No'
 state: Alaska
 surfaceLiftsOnly: 'Yes'
-verticalDrop: 1,300
+verticalDrop: '1,300'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -5,14 +5,15 @@ mountain: Wasatch Peaks Ranch
 openToPublic: 'No'
 owner: Independent
 passAffiliations: ''
-skiableAcres: 3,000
+skiableAcres: '3,000'
 skied: 'No'
 state: Utah
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,300
+verticalDrop: '2,300'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

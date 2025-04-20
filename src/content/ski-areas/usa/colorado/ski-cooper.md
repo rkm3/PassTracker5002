@@ -4,15 +4,16 @@ country: USA
 mountain: Ski Cooper
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Powder Alliance, Freedom
+passAffiliations: 'Powder Alliance, Freedom'
 skiableAcres: '480'
 skied: 'No'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,200
+verticalDrop: '1,200'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

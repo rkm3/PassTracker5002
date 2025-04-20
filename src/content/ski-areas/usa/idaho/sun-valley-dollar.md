@@ -4,7 +4,7 @@ country: USA
 mountain: 'Sun Valley: Dollar'
 openToPublic: 'Yes'
 owner: Holding Family
-passAffiliations: Ikon, Mountain Collective, Left Epic
+passAffiliations: 'Ikon, Mountain Collective, Left Epic'
 skiableAcres: ''
 skied: 'Yes'
 state: Idaho
@@ -13,6 +13,7 @@ verticalDrop: '628'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

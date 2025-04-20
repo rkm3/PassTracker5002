@@ -5,14 +5,15 @@ mountain: Sugar Bowl
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: Mountain Collective
-skiableAcres: 1,650
+skiableAcres: '1,650'
 skied: 'No'
 state: California
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,500
+verticalDrop: '1,500'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

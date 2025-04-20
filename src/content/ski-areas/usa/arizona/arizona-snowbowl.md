@@ -9,10 +9,11 @@ skiableAcres: '777'
 skied: 'No'
 state: Arizona
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,800
+verticalDrop: '2,800'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -4,7 +4,7 @@ country: USA
 mountain: Big Moose
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Uphill New England
+passAffiliations: 'Indy, Uphill New England'
 skiableAcres: ''
 skied: 'No'
 state: Maine
@@ -13,6 +13,7 @@ verticalDrop: '587'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

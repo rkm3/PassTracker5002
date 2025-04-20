@@ -5,14 +5,15 @@ mountain: Breckenridge
 openToPublic: 'Yes'
 owner: Vail Resorts
 passAffiliations: Epic
-skiableAcres: 2,908
+skiableAcres: '2,908'
 skied: 'Yes'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 3,398
+verticalDrop: '3,398'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

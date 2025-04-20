@@ -5,14 +5,15 @@ mountain: Solitude
 openToPublic: 'Yes'
 owner: Alterra
 passAffiliations: Ikon
-skiableAcres: 1,200
+skiableAcres: '1,200'
 skied: 'Yes'
 state: Utah
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,041
+verticalDrop: '2,041'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -5,14 +5,15 @@ mountain: Mount Hood Meadows
 openToPublic: 'Yes'
 owner: Drake Family
 passAffiliations: Indy
-skiableAcres: 2,150
+skiableAcres: '2,150'
 skied: 'Yes'
 state: Oregon
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,777
+verticalDrop: '2,777'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

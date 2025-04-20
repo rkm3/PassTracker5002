@@ -4,15 +4,16 @@ country: USA
 mountain: Killington
 openToPublic: 'Yes'
 owner: Phill Gross
-passAffiliations: Ikon, Uphill New England
-skiableAcres: 1,509
+passAffiliations: 'Ikon, Uphill New England'
+skiableAcres: '1,509'
 skied: 'Yes'
 state: Vermont
 surfaceLiftsOnly: 'No'
-verticalDrop: 3,000
+verticalDrop: '3,000'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

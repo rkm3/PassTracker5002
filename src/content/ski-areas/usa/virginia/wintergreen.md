@@ -9,10 +9,11 @@ skiableAcres: '129'
 skied: 'Yes'
 state: Virginia
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,003
+verticalDrop: '1,003'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

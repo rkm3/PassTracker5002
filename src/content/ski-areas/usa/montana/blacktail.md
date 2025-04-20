@@ -4,15 +4,16 @@ country: USA
 mountain: Blacktail
 openToPublic: 'Yes'
 owner: Larry Scrivanich
-passAffiliations: Indy, Powder Alliance
-skiableAcres: 1,000
+passAffiliations: 'Indy, Powder Alliance'
+skiableAcres: '1,000'
 skied: 'No'
 state: Montana
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,440
+verticalDrop: '1,440'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

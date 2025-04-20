@@ -4,15 +4,16 @@ country: USA
 mountain: Snowmass
 openToPublic: 'Yes'
 owner: Aspen Skiing Company
-passAffiliations: Ikon, Mountain Collective
-skiableAcres: 3,342
+passAffiliations: 'Ikon, Mountain Collective'
+skiableAcres: '3,342'
 skied: 'Yes'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 4,406
+verticalDrop: '4,406'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

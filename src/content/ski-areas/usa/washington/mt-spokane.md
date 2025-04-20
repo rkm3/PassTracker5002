@@ -5,14 +5,15 @@ mountain: Mt. Spokane
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: Freedom
-skiableAcres: 1,704
+skiableAcres: '1,704'
 skied: 'Yes'
 state: Washington
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,000
+verticalDrop: '2,000'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

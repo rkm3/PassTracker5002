@@ -9,10 +9,11 @@ skiableAcres: '355'
 skied: 'No'
 state: Washington
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,125
+verticalDrop: '1,125'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

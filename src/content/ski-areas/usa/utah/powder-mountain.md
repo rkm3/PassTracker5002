@@ -5,14 +5,15 @@ mountain: Powder Mountain
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: ''
-skiableAcres: 5,000
+skiableAcres: '5,000'
 skied: 'Yes'
 state: Utah
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,995
+verticalDrop: '1,995'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

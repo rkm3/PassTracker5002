@@ -4,15 +4,16 @@ country: USA
 mountain: Silver Mountain
 openToPublic: 'Yes'
 owner: CMR Lands
-passAffiliations: Indy, Powder Alliance
-skiableAcres: 1,600
+passAffiliations: 'Indy, Powder Alliance'
+skiableAcres: '1,600'
 skied: 'Yes'
 state: Idaho
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,200
+verticalDrop: '2,200'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

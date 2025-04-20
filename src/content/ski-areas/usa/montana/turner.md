@@ -5,14 +5,15 @@ mountain: Turner
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: ''
-skiableAcres: 1,000
+skiableAcres: '1,000'
 skied: 'No'
 state: Montana
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,110
+verticalDrop: '2,110'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

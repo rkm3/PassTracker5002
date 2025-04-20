@@ -4,15 +4,16 @@ country: USA
 mountain: Aspen Mountain
 openToPublic: 'Yes'
 owner: Aspen Skiing Company
-passAffiliations: Ikon, Mountain Collective
+passAffiliations: 'Ikon, Mountain Collective'
 skiableAcres: '826'
 skied: 'Yes'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 3,267
+verticalDrop: '3,267'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

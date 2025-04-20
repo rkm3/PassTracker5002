@@ -5,14 +5,15 @@ mountain: Steamboat
 openToPublic: 'Yes'
 owner: Alterra
 passAffiliations: Ikon
-skiableAcres: 3,741
+skiableAcres: '3,741'
 skied: 'Yes'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 3,668
+verticalDrop: '3,668'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

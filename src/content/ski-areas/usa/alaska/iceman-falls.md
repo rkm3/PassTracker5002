@@ -11,8 +11,9 @@ state: Alaska
 surfaceLiftsOnly: 'No'
 verticalDrop: '300'
 operated:
-  '2324': true
-  '2425': true
+  '2324': false
+  '2425': false
+website: ''
 ---
 
 

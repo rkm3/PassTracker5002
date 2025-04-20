@@ -5,14 +5,15 @@ mountain: Keystone
 openToPublic: 'Yes'
 owner: Vail Resorts
 passAffiliations: Epic
-skiableAcres: 3,149
+skiableAcres: '3,149'
 skied: 'Yes'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 3,128
+verticalDrop: '3,128'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

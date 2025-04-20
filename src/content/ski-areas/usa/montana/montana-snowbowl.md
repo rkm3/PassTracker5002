@@ -5,14 +5,15 @@ mountain: Montana Snowbowl
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: Indy
-skiableAcres: 2,000
+skiableAcres: '2,000'
 skied: 'No'
 state: Montana
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,600
+verticalDrop: '2,600'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

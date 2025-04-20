@@ -5,14 +5,15 @@ mountain: Smugglers' Notch
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: ''
-skiableAcres: 1,000
+skiableAcres: '1,000'
 skied: 'Yes'
 state: Vermont
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,610
+verticalDrop: '2,610'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -5,14 +5,15 @@ mountain: Tamarack
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: Indy
-skiableAcres: 1,100
+skiableAcres: '1,100'
 skied: 'No'
 state: Idaho
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,800
+verticalDrop: '2,800'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

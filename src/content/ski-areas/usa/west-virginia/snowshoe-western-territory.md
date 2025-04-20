@@ -9,10 +9,11 @@ skiableAcres: '257'
 skied: 'No'
 state: West Virginia
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,500
+verticalDrop: '1,500'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

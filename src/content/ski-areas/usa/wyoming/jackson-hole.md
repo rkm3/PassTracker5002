@@ -4,15 +4,16 @@ country: USA
 mountain: Jackson Hole
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Ikon, Mountain Collective
-skiableAcres: 2,500
+passAffiliations: 'Ikon, Mountain Collective'
+skiableAcres: '2,500'
 skied: 'Yes'
 state: Wyoming
 surfaceLiftsOnly: 'No'
-verticalDrop: 4,139
+verticalDrop: '4,139'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

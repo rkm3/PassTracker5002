@@ -9,10 +9,11 @@ skiableAcres: '115'
 skied: 'No'
 state: North Carolina
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,200
+verticalDrop: '1,200'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -4,15 +4,16 @@ country: USA
 mountain: Waterville Valley
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Uphill New England
+passAffiliations: 'Indy, Uphill New England'
 skiableAcres: '265'
 skied: 'Yes'
 state: New Hampshire
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,020
+verticalDrop: '2,020'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

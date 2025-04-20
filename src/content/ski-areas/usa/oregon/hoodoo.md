@@ -9,10 +9,11 @@ skiableAcres: '806'
 skied: 'Yes'
 state: Oregon
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,035
+verticalDrop: '1,035'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

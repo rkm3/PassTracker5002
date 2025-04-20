@@ -4,15 +4,16 @@ country: USA
 mountain: Snowbird
 openToPublic: 'Yes'
 owner: Powdr
-passAffiliations: Ikon, Mountain Collective
-skiableAcres: 2,500
+passAffiliations: 'Ikon, Mountain Collective'
+skiableAcres: '2,500'
 skied: 'Yes'
 state: Utah
 surfaceLiftsOnly: 'No'
-verticalDrop: 3,240
+verticalDrop: '3,240'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

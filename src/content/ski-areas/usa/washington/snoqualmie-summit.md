@@ -4,15 +4,16 @@ country: USA
 mountain: 'Snoqualmie: Summit'
 openToPublic: 'Yes'
 owner: Boyne Resorts
-passAffiliations: Ikon, New England Pass
-skiableAcres: 1,119
+passAffiliations: 'Ikon, New England Pass'
+skiableAcres: '1,119'
 skied: 'Yes'
 state: Washington
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,100
+verticalDrop: '1,100'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

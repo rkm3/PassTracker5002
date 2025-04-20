@@ -4,15 +4,16 @@ country: USA
 mountain: Alta
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Ikon, Mountain Collective
-skiableAcres: 2,614
+passAffiliations: 'Ikon, Mountain Collective'
+skiableAcres: '2,614'
 skied: 'Yes'
 state: Utah
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,538
+verticalDrop: '2,538'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

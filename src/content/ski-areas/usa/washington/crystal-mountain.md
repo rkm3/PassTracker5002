@@ -5,14 +5,15 @@ mountain: Crystal Mountain
 openToPublic: 'Yes'
 owner: Alterra
 passAffiliations: Ikon
-skiableAcres: 2,600
+skiableAcres: '2,600'
 skied: Summer
 state: Washington
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,612
+verticalDrop: '2,612'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

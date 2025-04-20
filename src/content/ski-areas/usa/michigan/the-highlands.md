@@ -4,7 +4,7 @@ country: USA
 mountain: The Highlands
 openToPublic: 'Yes'
 owner: Boyne Resorts
-passAffiliations: Ikon, New England Pass
+passAffiliations: 'Ikon, New England Pass'
 skiableAcres: '435'
 skied: 'Yes'
 state: Michigan
@@ -13,6 +13,7 @@ verticalDrop: '552'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

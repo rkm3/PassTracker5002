@@ -4,15 +4,16 @@ country: USA
 mountain: Sierra-at-Tahoe
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Ikon, Powder Alliance, Left Epic
-skiableAcres: 2,000
+passAffiliations: 'Ikon, Powder Alliance, Left Epic'
+skiableAcres: '2,000'
 skied: 'No'
 state: California
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,212
+verticalDrop: '2,212'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

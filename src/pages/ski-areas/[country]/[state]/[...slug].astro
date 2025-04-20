@@ -232,6 +232,17 @@ const operatedSeasons = {
 							<dt class="font-medium">Pass Affiliations:</dt>
 							<dd set:html={processPassAffiliations(area.data.passAffiliations)}></dd>
 						</div>
+						{/* Only render website row if website data exists */}
+						{area.data.website && (
+							<div class="flex justify-between">
+								<dt class="font-medium">Website:</dt>
+								<dd>
+									<a href={area.data.website} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+										{area.data.website}
+									</a>
+								</dd>
+							</div>
+						)}
 					</dl>
 				</div>
 

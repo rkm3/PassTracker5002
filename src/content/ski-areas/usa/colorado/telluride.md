@@ -5,14 +5,15 @@ mountain: Telluride
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: Epic
-skiableAcres: 2,000
+skiableAcres: '2,000'
 skied: 'No'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 3,790
+verticalDrop: '3,790'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

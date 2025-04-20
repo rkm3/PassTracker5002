@@ -4,15 +4,16 @@ country: USA
 mountain: Tenney
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Uphill New England
+passAffiliations: 'Indy, Uphill New England'
 skiableAcres: '110'
 skied: 'Yes'
 state: New Hampshire
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,400
+verticalDrop: '1,400'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -5,14 +5,15 @@ mountain: Lookout Pass
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: ''
-skiableAcres: 1,023
+skiableAcres: '1,023'
 skied: 'No'
 state: Idaho
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,650
+verticalDrop: '1,650'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

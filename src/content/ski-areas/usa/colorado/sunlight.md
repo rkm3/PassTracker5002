@@ -4,15 +4,16 @@ country: USA
 mountain: Sunlight
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Freedom
+passAffiliations: 'Indy, Freedom'
 skiableAcres: '730'
 skied: 'No'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,010
+verticalDrop: '2,010'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

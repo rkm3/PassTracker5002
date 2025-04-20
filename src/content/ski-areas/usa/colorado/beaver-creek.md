@@ -5,14 +5,15 @@ mountain: Beaver Creek
 openToPublic: 'Yes'
 owner: Vail Resorts
 passAffiliations: Epic
-skiableAcres: 2,082
+skiableAcres: '2,082'
 skied: 'Yes'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 3,340
+verticalDrop: '3,340'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

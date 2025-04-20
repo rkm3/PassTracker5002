@@ -5,14 +5,15 @@ mountain: 49° North
 openToPublic: 'Yes'
 owner: CMR Lands
 passAffiliations: Indy
-skiableAcres: 2,325
+skiableAcres: '2,325'
 skied: 'Yes'
 state: Washington
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,851
+verticalDrop: '1,851'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

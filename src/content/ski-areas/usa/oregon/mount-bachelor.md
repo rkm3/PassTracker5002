@@ -5,14 +5,15 @@ mountain: Mount Bachelor
 openToPublic: 'Yes'
 owner: Powdr
 passAffiliations: Ikon
-skiableAcres: 4,323
+skiableAcres: '4,323'
 skied: 'Yes'
 state: Oregon
 surfaceLiftsOnly: 'No'
-verticalDrop: 3,365
+verticalDrop: '3,365'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

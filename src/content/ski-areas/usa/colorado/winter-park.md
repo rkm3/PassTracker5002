@@ -5,14 +5,15 @@ mountain: Winter Park
 openToPublic: 'Yes'
 owner: Alterra
 passAffiliations: Ikon
-skiableAcres: 3,081
+skiableAcres: '3,081'
 skied: 'Yes'
 state: Colorado
 surfaceLiftsOnly: 'No'
-verticalDrop: 3,060
+verticalDrop: '3,060'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

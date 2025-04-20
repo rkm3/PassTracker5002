@@ -4,15 +4,16 @@ country: USA
 mountain: China Peak
 openToPublic: 'Yes'
 owner: California Mountain Resort Company
-passAffiliations: Indy, Powder Alliance
-skiableAcres: 1,200
+passAffiliations: 'Indy, Powder Alliance'
+skiableAcres: '1,200'
 skied: 'No'
 state: California
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,679
+verticalDrop: '1,679'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

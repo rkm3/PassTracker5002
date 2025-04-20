@@ -6,6 +6,7 @@ const skiAreas = defineCollection({
 		country: z.string(),
 		state: z.string(),
 		mountain: z.string(),
+		website: z.string().optional(),
 		verticalDrop: z.string().optional(),
 		skiableAcres: z.string().optional(),
 		annualSnowfall: z.string().optional(),

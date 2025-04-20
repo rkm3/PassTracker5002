@@ -4,15 +4,16 @@ country: USA
 mountain: 'Mountain  High: West'
 openToPublic: 'Yes'
 owner: California Mountain Resort Company
-passAffiliations: Indy, Powder Alliance
+passAffiliations: 'Indy, Powder Alliance'
 skiableAcres: '145'
 skied: 'Yes'
 state: California
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,000
+verticalDrop: '1,000'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

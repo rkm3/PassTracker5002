@@ -4,15 +4,16 @@ country: USA
 mountain: Loon
 openToPublic: 'Yes'
 owner: Boyne Resorts
-passAffiliations: Ikon, New England Pass
+passAffiliations: 'Ikon, New England Pass'
 skiableAcres: '400'
 skied: 'Yes'
 state: New Hampshire
 surfaceLiftsOnly: 'No'
-verticalDrop: 2,190
+verticalDrop: '2,190'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

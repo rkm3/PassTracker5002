@@ -5,14 +5,15 @@ mountain: Timberline Lodge (Inc. Summit)
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: Powder Alliance
-skiableAcres: 1,685
+skiableAcres: '1,685'
 skied: 'Yes'
 state: Oregon
 surfaceLiftsOnly: 'No'
-verticalDrop: 4,540
+verticalDrop: '4,540'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

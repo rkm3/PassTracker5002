@@ -4,15 +4,16 @@ country: USA
 mountain: Brighton
 openToPublic: 'Yes'
 owner: Boyne Resorts
-passAffiliations: Ikon, New England Pass
-skiableAcres: 1,050
+passAffiliations: 'Ikon, New England Pass'
+skiableAcres: '1,050'
 skied: 'Yes'
 state: Utah
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,745
+verticalDrop: '1,745'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

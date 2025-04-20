@@ -4,15 +4,16 @@ country: USA
 mountain: Middlebury Snowbowl
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Uphill New England
+passAffiliations: 'Indy, Uphill New England'
 skiableAcres: '110'
 skied: 'Yes'
 state: Vermont
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,000
+verticalDrop: '1,000'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

@@ -5,7 +5,7 @@ mountain: Anthony Lakes
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: ''
-skiableAcres: 1,100
+skiableAcres: '1,100'
 skied: 'No'
 state: Oregon
 surfaceLiftsOnly: 'No'
@@ -13,6 +13,7 @@ verticalDrop: '900'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

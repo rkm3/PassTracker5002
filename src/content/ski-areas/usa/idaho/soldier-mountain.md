@@ -5,14 +5,15 @@ mountain: Soldier Mountain
 openToPublic: 'Yes'
 owner: Independent
 passAffiliations: Indy
-skiableAcres: 1,150
+skiableAcres: '1,150'
 skied: 'Yes'
 state: Idaho
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,421
+verticalDrop: '1,421'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 

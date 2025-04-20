@@ -4,15 +4,16 @@ country: USA
 mountain: Magic Mountain
 openToPublic: 'Yes'
 owner: Independent
-passAffiliations: Indy, Uphill New England
+passAffiliations: 'Indy, Uphill New England'
 skiableAcres: '205'
 skied: 'Yes'
 state: Vermont
 surfaceLiftsOnly: 'No'
-verticalDrop: 1,500
+verticalDrop: '1,500'
 operated:
   '2324': true
   '2425': true
+website: ''
 ---
 
 
