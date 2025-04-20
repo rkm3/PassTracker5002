@@ -9,7 +9,10 @@
     "preview": "astro preview",
     "astro": "astro",
     "generate:posts": "node scripts/generate-posts.mjs",
-    "generate:pubdates": "node scripts/postPubDates.mjs"
+    "generate:pubdates": "node scripts/postPubDates.mjs",
+    "lint:json": "prettier --check '**/*.json'",
+    "format:json": "prettier --write '**/*.json'",
+    "all": "pnpm run generate:posts && pnpm run generate:pubdates && pnpm run build && pnpm run format:json"
   },
   "dependencies": {
     "@types/cheerio": "^0.22.35",
@@ -29,6 +32,8 @@
     "fast-glob": "^3.3.3",
     "gray-matter": "^4.0.3",
     "postcss": "^8.4.31",
+    "prettier": "^3.5.3",
+    "prettier-plugin-sort-json": "^4.1.1",
     "tailwindcss": "^3.0.24"
   }
 }
