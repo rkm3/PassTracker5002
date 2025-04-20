@@ -62,9 +62,26 @@ const passes = defineCollection({
 	}),
 });
 
+// Define the schema for the 'posts' collection
+const postsCollection = defineCollection({
+	type: 'content', // v2.5.0 and later
+	schema: z.object({
+		title: z.string(),
+		// Expect an ISO datetime string and transform it to a Date object
+		pubDate: z.string().datetime({ message: "Invalid datetime string! Must be UTC ISO8601" }).transform((str) => new Date(str)),
+		url: z.string().url(),
+		slug: z.string().optional(), // Make slug optional
+		description: z.string(),
+		tags: z.array(z.string()),
+		changefreq: z.enum(['always', 'hourly', 'daily', 'weekly', 'monthly', 'yearly', 'never'])
+	})
+});
+
+// Export a single `collections` object containing all collections
 export const collections = {
+	posts: postsCollection,
 	'ski-areas': skiAreas,
 	'owners': owners,
 	'pass-families': passFamilies,
-	passes: passes,
+	'passes': passes,
 };

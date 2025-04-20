@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import mentionLinksIntegration from './src/integrations/mention-links-integration.mjs';
 
+
 // Define siteBase here if needed elsewhere, otherwise it can be removed if only used for slug map
 const siteBase = '/PassTracker5002';
 

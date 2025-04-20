@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+// Generate static paths for each post
+export async function getStaticPaths() {
+  const postEntries = await getCollection('posts');
+  // Filter to ensure we only process actual posts, in case getCollection returns mixed types
+  const validPostEntries = postEntries.filter(entry => 'pubDate' in entry.data);
+  return validPostEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+// Get the current post entry from props
+const { entry } = Astro.props;
+const { Content } = await entry.render(); // This gets the component to render MD
+---
+
+<Layout title={entry.data.title}>
+  <article class="container mx-auto px-4 py-8 prose lg:prose-xl">
+    <h1>{entry.data.title}</h1>
+    <p class="text-gray-600 text-sm">
+      Published on: {entry.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+    </p>
+    <p>
+      <a href={entry.data.url} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+        Read Original Post
+      </a>
+    </p>
+    <hr class="my-4"/>
+    <!-- Render the markdown content -->
+    <Content />
+  </article>
+</Layout>
