@@ -36,6 +36,17 @@ const normalizeUrlPath = (rawPathname: string, basePath: string): string => {
     return normalized;
 };
 
+// Helper to determine the type of backlink based on URL
+const getBacklinkType = (url: string): string => {
+    if (url.startsWith('/owners/')) return 'Owners';
+    if (url.startsWith('/ski-areas/')) return 'Ski Areas';
+    if (url.startsWith('/passes/')) return 'Passes';
+    if (url.startsWith('/posts/')) return 'Storm Posts';
+    if (url.startsWith('/countries/')) return 'Countries';
+    // Add other known prefixes here
+    return 'Other Pages'; // Default category
+};
+
 // Read the backlinks data dynamically from the project root
 let referringPages: readonly BacklinkEntry[] = [];
 let backlinksData: Record<string, BacklinkEntry[]> | null = null;
@@ -70,18 +81,48 @@ try {
     console.error('[Backlinks Component] Error processing backlinks data:', error);
 }
 
+// Group backlinks by type
+const groupedBacklinks: Record<string, BacklinkEntry[]> = {};
+for (const entry of referringPages) {
+    const type = getBacklinkType(entry.url);
+    if (!groupedBacklinks[type]) {
+        groupedBacklinks[type] = [];
+    }
+    groupedBacklinks[type].push(entry);
+}
+
+// Define preferred order for sections
+const typeOrder = ['Owners', 'Ski Areas', 'Passes', 'Blog Posts', 'Other Pages'];
+
+// Sort the grouped backlinks based on the preferred order
+const sortedGroupedBacklinks = Object.entries(groupedBacklinks).sort(([typeA], [typeB]) => {
+    const indexA = typeOrder.indexOf(typeA);
+    const indexB = typeOrder.indexOf(typeB);
+    // Handle types not in the predefined order (place them at the end)
+    if (indexA === -1 && indexB === -1) return typeA.localeCompare(typeB); // Sort alphabetically if both unknown
+    if (indexA === -1) return 1; // Place unknown types after known types
+    if (indexB === -1) return -1; // Place known types before unknown types
+    return indexA - indexB; // Sort based on predefined order
+});
+
+
 const baseHref = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
-const showBacklinks = referringPages.length > 0;
+const showBacklinks = sortedGroupedBacklinks.length > 0;
 ---
 {showBacklinks && (
   <div class="mt-12 pt-8 border-t border-gray-200">
-    <h2 class="text-2xl font-semibold mb-4">Links to this Page</h2>
-    <ul class="list-disc list-inside space-y-2">
-      {referringPages.map((entry: BacklinkEntry) => (
-        <li>
-          <a href={`${baseHref}${entry.url.startsWith('/') ? entry.url.substring(1) : entry.url}`} class="text-blue-600 hover:underline">{entry.title}</a>
-        </li>
-      ))}
-    </ul>
+    <h2 class="text-2xl font-semibold mb-6">Links to this Page</h2>
+    {sortedGroupedBacklinks.map(([type, entries]) => (
+      <div class="mb-6 last:mb-0"> {/* Add margin between sections */}
+        <h3 class="text-xl font-medium mb-3">{type} ({entries.length})</h3> {/* Show count */}
+        <ul class="list-disc list-inside space-y-2">
+          {entries.map((entry: BacklinkEntry) => (
+            <li>
+              <a href={`${baseHref}${entry.url.startsWith('/') ? entry.url.substring(1) : entry.url}`} class="text-blue-600 hover:underline">{entry.title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
   </div>
 )}
