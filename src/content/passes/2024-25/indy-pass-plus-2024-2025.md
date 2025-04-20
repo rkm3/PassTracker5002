@@ -1,5 +1,5 @@
 ---
-name: Indy Pass Plus
+name: Indy Pass Plus 2024-25
 season: 2024-25
 passFamily: Indy Pass
 price: 399

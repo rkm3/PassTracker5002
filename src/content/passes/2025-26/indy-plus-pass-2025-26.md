@@ -1,5 +1,5 @@
 ---
-name: Indy Plus Pass
+name: Indy Plus Pass 2025-26
 season: 2025-26
 passFamily: Indy Pass
 price: 399

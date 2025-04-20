@@ -1,5 +1,5 @@
 ---
-name: Epic Pass
+name: Epic Pass 2024-25
 season: 2024-25
 passFamily: Epic Pass
 price: 909

@@ -1,5 +1,5 @@
 ---
-name: Epic Pass
+name: Epic Pass 2025-26
 season: 2025-26
 passFamily: Epic Pass
 price: 949

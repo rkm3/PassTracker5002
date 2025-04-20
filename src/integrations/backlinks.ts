@@ -147,7 +147,12 @@ export default function backlinks(options?: BacklinksIntegrationOptions): AstroI
             }
             // Ensure leading slash
             const sourcePathname = '/' + relativePath;
-            const sourceCanonicalUrl = normalizeUrlPath(sourcePathname);
+            let sourceCanonicalUrl = normalizeUrlPath(sourcePathname);
+
+            // Normalize /usa/ to /us/
+            if (sourceCanonicalUrl.startsWith('/ski-areas/usa/')) {
+                sourceCanonicalUrl = sourceCanonicalUrl.replace('/ski-areas/usa/', '/ski-areas/us/');
+            }
 
             try {
               const htmlContent = await fs.readFile(sourceAbsoluteFilePath, 'utf-8');
@@ -177,7 +182,13 @@ export default function backlinks(options?: BacklinksIntegrationOptions): AstroI
 
                   // Check if the target file actually exists in our built set
                    if (potentialTargetFilePath && builtFilePathsSet.has(path.normalize(potentialTargetFilePath))) { // Normalize for comparison
-                    const targetCanonicalUrl = normalizeUrlPath(resolvedPathname);
+                    let targetCanonicalUrl = normalizeUrlPath(resolvedPathname);
+
+                    // Normalize /usa/ to /us/
+                    if (targetCanonicalUrl.startsWith('/ski-areas/usa/')) {
+                        targetCanonicalUrl = targetCanonicalUrl.replace('/ski-areas/usa/', '/ski-areas/us/');
+                    }
+
 
                     // Safety check: Ensure we have valid url and title
                     if (typeof sourceCanonicalUrl !== 'string' || typeof sourceTitle !== 'string') {
@@ -205,7 +216,8 @@ export default function backlinks(options?: BacklinksIntegrationOptions): AstroI
 
         // --- Finalize: Convert Map to JSON and Write ---
         console.log('[backlinks] Finalizing backlinks...');
-        const excludedUrls = new Set(['/', '/countries', '/ski-areas/usa', '/owners', '/resorts']);
+        // Add /countries/usa to the exclusion set
+        const excludedUrls = new Set(['/', '/countries', '/ski-areas/usa', '/owners', '/resorts', '/countries/usa']);
         // Update output type
         const backlinksOutput: Record<string, BacklinkEntry[]> = {};
          for (const [targetUrl, sourceEntriesMap] of backlinksMap.entries()) {

@@ -1,5 +1,5 @@
 ---
-name: Ikon Pass
+name: Ikon Pass 2025-26
 season: 2025-26
 passFamily: Ikon Pass
 price: 1199

@@ -1,5 +1,5 @@
 ---
-name: Mountain Collective
+name: Mountain Collective 2025-26
 season: 2025-26
 passFamily: Mountain Collective
 price: 639

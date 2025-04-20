@@ -1,5 +1,5 @@
 ---
-name: Ikon Pass
+name: Ikon Pass 2024-25
 season: 2024-25
 passFamily: Ikon Pass
 price: 1149
@@ -227,7 +227,7 @@ The Ikon Pass for the 2024-25 season provides unlimited, unrestricted access to 
 - Unlimited access to Alterra Mountain Company owned and operated properties
 - 7 days at partner resorts (Alta, Snowbird, Jackson Hole, Big Sky, Revelstoke, Arapahoe Basin, Snowbasin, Sun Valley, Taos, Schweitzer, Crystal Mountain, Snoqualmie, Boyne Highlands, Boyne Mountain, Loon, Sunday River, Sugarloaf, Tremblant, Blue Mountain, Red Mountain, Snowshoe, Silver Creek, Cypress Mountain, Panorama, Kicking Horse, Thredbo, Mt. Buller, The Remarkables, Coronet Peak, Mt. Hutt, Valle Nevado)
 - Discounts on food, lodging, and equipment rentals
-- Various pass options for different demographics (seniors, military, etc.)
+- Various pass options for dixfferent demographics (seniors, military, etc.)
 
 ## Partner Resorts
 

@@ -1,5 +1,5 @@
 ---
-name: Ikon Base Pass
+name: Ikon Base Pass 2025-25
 season: 2024-25
 passFamily: Ikon Pass
 price: 1149

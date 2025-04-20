@@ -1,5 +1,5 @@
 ---
-name: Indy Base Pass
+name: Indy Base Pass 2024-25
 season: 2024-25
 passFamily: Indy Pass
 price: 299

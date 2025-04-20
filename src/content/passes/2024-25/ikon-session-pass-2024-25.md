@@ -1,5 +1,5 @@
 ---
-name: Ikon Session Pass
+name: Ikon Session Pass 2024-25
 season: 2024-25
 passFamily: Ikon Pass
 price: 1149
