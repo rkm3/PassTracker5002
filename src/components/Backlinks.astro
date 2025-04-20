@@ -1,0 +1,87 @@
+---
+import fs from 'fs/promises';
+import path from 'path';
+const baseUrl = import.meta.env.BASE_URL;
+
+// Define the structure we expect in the JSON
+interface BacklinkEntry {
+  url: string;
+  title: string;
+}
+
+interface Props {
+  pathname: string; // Expecting Astro.url.pathname
+}
+
+const { pathname } = Astro.props;
+
+// Helper to normalize the current page's pathname
+const normalizeUrlPath = (rawPathname: string, basePath: string): string => {
+    let normalized = rawPathname;
+    const base = basePath.endsWith('/') ? basePath : basePath + '/';
+
+    if (base !== '/' && normalized.startsWith(base)) {
+        normalized = normalized.substring(base.length - 1);
+         if (!normalized.startsWith('/')) normalized = '/' + normalized;
+    }
+    try {
+        normalized = decodeURI(normalized);
+    } catch (e) {
+        console.warn(`[Backlinks Component] Failed to decode URI: ${rawPathname}`, e);
+    }
+    if (normalized.length > 1 && normalized.endsWith('/')) {
+        normalized = normalized.slice(0, -1);
+    }
+     if (!normalized.startsWith('/')) normalized = '/' + normalized;
+    return normalized;
+};
+
+// Read the backlinks data dynamically from the project root
+let referringPages: readonly BacklinkEntry[] = [];
+let backlinksData: Record<string, BacklinkEntry[]> | null = null;
+const projectRoot = process.cwd();
+const backlinksFilePath = path.join(projectRoot, 'src', 'data', 'backlinks.json');
+
+try {
+    // Check if file exists before trying to read
+    try {
+        await fs.access(backlinksFilePath); // Check existence at src/data/backlinks.json
+        const backlinksJsonContent = await fs.readFile(backlinksFilePath, 'utf-8');
+        backlinksData = JSON.parse(backlinksJsonContent);
+    } catch (existenceError: any) { // Catch potential errors
+        if (existenceError.code === 'ENOENT') {
+             console.warn(`[Backlinks Component] backlinks.json not found at ${backlinksFilePath}. This might be expected during the build.`);
+        } else {
+            // Re-throw unexpected errors (e.g., permissions)
+            throw existenceError;
+        }
+    }
+
+    if (backlinksData) {
+        const canonicalUrl = normalizeUrlPath(pathname, baseUrl);
+        const entries = backlinksData[canonicalUrl];
+        if (Array.isArray(entries) && entries.every(e => typeof e === 'object' && e !== null && 'url' in e && 'title' in e)) {
+             referringPages = entries;
+        } else if (entries !== undefined) {
+             console.warn(`[Backlinks Component] backlinks.json data for ${canonicalUrl} has unexpected format. Expected array of {url, title}. Found:`, entries);
+        }
+    }
+} catch (error) {
+    console.error('[Backlinks Component] Error processing backlinks data:', error);
+}
+
+const baseHref = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
+const showBacklinks = referringPages.length > 0;
+---
+{showBacklinks && (
+  <div class="mt-12 pt-8 border-t border-gray-200">
+    <h2 class="text-2xl font-semibold mb-4">Links to this Page</h2>
+    <ul class="list-disc list-inside space-y-2">
+      {referringPages.map((entry: BacklinkEntry) => (
+        <li>
+          <a href={`${baseHref}${entry.url.startsWith('/') ? entry.url.substring(1) : entry.url}`} class="text-blue-600 hover:underline">{entry.title}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import Backlinks from '../../components/Backlinks.astro';
 
 export async function getStaticPaths() {
 	const skiAreas = await getCollection('ski-areas');
@@ -75,6 +76,8 @@ const baseUrl = import.meta.env.BASE_URL;
 			<div class="prose max-w-none">
 				<Content />
 			</div>
+
+			<Backlinks pathname={Astro.url.pathname} />
 		</div>
 	</div>
 </Layout>

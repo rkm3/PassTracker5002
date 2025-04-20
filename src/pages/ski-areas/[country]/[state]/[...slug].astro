@@ -2,6 +2,7 @@
 import Layout from '../../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import Backlinks from '../../../../components/Backlinks.astro';
 
 export async function getStaticPaths() {
 	const skiAreas = await getCollection('ski-areas');
@@ -233,6 +234,8 @@ const ownerSlug = findOwnerSlug(area.data.owner);
 			<div class="prose max-w-none">
 				<Content />
 			</div>
+
+			<Backlinks pathname={Astro.url.pathname} />
 		</div>
 	</div>
 </Layout>
