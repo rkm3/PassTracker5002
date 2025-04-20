@@ -17,6 +17,13 @@ const skiAreas = defineCollection({
 		openToPublic: z.string().optional(),
 		skied: z.string().optional(),
 		slug: z.string().optional(),
+		elevationBase: z.number().nullable().optional(),
+		elevationSummit: z.number().nullable().optional(),
+		trailCount: z.number().nullable().optional(),
+		trailPctBeginner: z.number().nullable().optional(),
+		trailPctIntermediate: z.number().nullable().optional(),
+		trailPctAdvanced: z.number().nullable().optional(),
+		liftCount: z.number().nullable().optional(),
 	}),
 });
 

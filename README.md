@@ -37,3 +37,13 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+
+## Scripts
+
+
+Add frontmatter to all of a type
+
+- Usage: `node scripts/add-frontmatter-field.js <directoryPath> <fieldName> <defaultValue>`
+
+example `node scripts/add-frontmatter-field.js src/content/ski-areas elevationBase ''`

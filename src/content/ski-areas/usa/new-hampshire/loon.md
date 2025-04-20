@@ -13,7 +13,14 @@ verticalDrop: '2,190'
 operated:
   '2324': true
   '2425': true
-website: ''
+website: 'loonmtn.com'
+elevationBase: 950
+elevationSummit: 2100
+trailCount: 61
+trailPctBeginner: 20
+trailPctIntermediate: 60
+trailPctAdvanced: 20
+liftCount: 11
 ---
 
 

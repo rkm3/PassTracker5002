@@ -104,8 +104,8 @@ function findOwnerSlug(ownerName: string | undefined): string | null {
 }
 
 // Function to process pass affiliations
-function processPassAffiliations(affiliationsString: string | undefined): string {
-	if (!affiliationsString) return '<span class="text-gray-400">—</span>';
+function processPassAffiliations(affiliationsString: string | undefined): string[] {
+	if (!affiliationsString) return [];
 
 	const affiliations = affiliationsString.split(',').map(aff => aff.trim());
 	return affiliations.map(affiliation => {
@@ -160,11 +160,14 @@ function processPassAffiliations(affiliationsString: string | undefined): string
 		} else {
 			return affiliation;
 		}
-	}).join(', ');
+	});
 }
 
 // Find owner slug for this ski area
 const ownerSlug = findOwnerSlug(area.data.owner);
+
+// Process pass affiliations for list rendering
+const affiliationsList = processPassAffiliations(area.data.passAffiliations);
 
 // Define default seasons and their default status
 const defaultSeasons = {
@@ -210,6 +213,42 @@ const operatedSeasons = {
 							<dt class="font-medium">Annual Snowfall:</dt>
 							<dd>{area.data.annualSnowfall || 'N/A'}</dd>
 						</div>
+						{area.data.elevationBase != null && (
+							<div class="flex justify-between">
+								<dt class="font-medium">Base Elevation:</dt>
+								<dd>{area.data.elevationBase} ft</dd>
+							</div>
+						)}
+						{area.data.elevationSummit != null && (
+							<div class="flex justify-between">
+								<dt class="font-medium">Summit Elevation:</dt>
+								<dd>{area.data.elevationSummit} ft</dd>
+							</div>
+						)}
+						{area.data.trailCount != null && (
+							<div class="flex justify-between">
+								<dt class="font-medium">Trails:</dt>
+								<dd>{area.data.trailCount}</dd>
+							</div>
+						)}
+						{area.data.trailPctBeginner != null && (
+							<div class="flex justify-between">
+								<dt class="font-medium">Beginner Trails:</dt>
+								<dd>{area.data.trailPctBeginner}%</dd>
+							</div>
+						)}
+						{area.data.trailPctIntermediate != null && (
+							<div class="flex justify-between">
+								<dt class="font-medium">Intermediate Trails:</dt>
+								<dd>{area.data.trailPctIntermediate}%</dd>
+							</div>
+						)}
+						{area.data.trailPctAdvanced != null && (
+							<div class="flex justify-between">
+								<dt class="font-medium">Advanced Trails:</dt>
+								<dd>{area.data.trailPctAdvanced}%</dd>
+							</div>
+						)}
 					</dl>
 				</div>
 
@@ -230,7 +269,17 @@ const operatedSeasons = {
 						</div>
 						<div class="flex justify-between">
 							<dt class="font-medium">Pass Affiliations:</dt>
-							<dd set:html={processPassAffiliations(area.data.passAffiliations)}></dd>
+							<dd>
+								{affiliationsList.length > 0 ? (
+									<ul class="list-disc list-inside ml-4">
+										{affiliationsList.map(affiliationHtml => (
+											<li set:html={affiliationHtml}></li>
+										))}
+									</ul>
+								) : (
+									<span class="text-gray-400">—</span>
+								)}
+							</dd>
 						</div>
 						{/* Only render website row if website data exists */}
 						{area.data.website && (

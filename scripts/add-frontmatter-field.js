@@ -61,7 +61,7 @@ function addFrontmatterField(directoryPath, fieldName, defaultValue) {
 const args = process.argv.slice(2);
 
 if (args.length !== 3) {
-    console.error('Usage: node scripts/add_frontmatter_field.js <directoryPath> <fieldName> <defaultValue>');
+    console.error('Usage: node scripts/add-frontmatter-field.js <directoryPath> <fieldName> <defaultValue>');
     process.exit(1);
 }
 

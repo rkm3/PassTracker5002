@@ -13,7 +13,14 @@ verticalDrop: '4,350'
 operated:
   '2324': true
   '2425': true
-website: 'www.bigskyresort.com'
+website: www.bigskyresort.com
+elevationBase:
+elevationSummit:
+trailCount:
+trailPctBeginner:
+trailPctIntermediate:
+trailPctAdvanced:
+liftCount:
 ---
 
 

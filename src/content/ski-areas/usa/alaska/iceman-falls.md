@@ -14,6 +14,13 @@ operated:
   '2324': false
   '2425': false
 website: ''
+elevationBase:
+elevationSummit:
+trailCount:
+trailPctBeginner:
+trailPctIntermediate:
+trailPctAdvanced:
+liftCount:
 ---
 
 
