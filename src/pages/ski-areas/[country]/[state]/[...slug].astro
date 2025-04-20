@@ -203,26 +203,26 @@ const operatedSeasons = {
 					<dl class="space-y-2">
 						<div class="flex justify-between">
 							<dt class="font-medium">Vertical Drop:</dt>
-							<dd>{area.data.verticalDrop || 'N/A'}</dd>
+							<dd>{area.data.verticalDrop.toLocaleString() || 'N/A'} ft</dd>
 						</div>
 						<div class="flex justify-between">
-							<dt class="font-medium">Skiable Acres:</dt>
-							<dd>{area.data.skiableAcres || 'N/A'}</dd>
+							<dt class="font-medium">Skiable Area:</dt>
+							<dd>{area.data.skiableAcres.toLocaleString() || 'N/A'} ac</dd>
 						</div>
 						<div class="flex justify-between">
 							<dt class="font-medium">Annual Snowfall:</dt>
-							<dd>{area.data.annualSnowfall || 'N/A'}</dd>
+							<dd>{area.data.annualSnowfall.toLocaleString() || 'N/A'} in</dd>
 						</div>
 						{area.data.elevationBase != null && (
 							<div class="flex justify-between">
 								<dt class="font-medium">Base Elevation:</dt>
-								<dd>{area.data.elevationBase} ft</dd>
+								<dd>{area.data.elevationBase.toLocaleString()} ft</dd>
 							</div>
 						)}
 						{area.data.elevationSummit != null && (
 							<div class="flex justify-between">
 								<dt class="font-medium">Summit Elevation:</dt>
-								<dd>{area.data.elevationSummit} ft</dd>
+								<dd>{area.data.elevationSummit.toLocaleString()} ft</dd>
 							</div>
 						)}
 						{area.data.trailCount != null && (
@@ -247,6 +247,12 @@ const operatedSeasons = {
 							<div class="flex justify-between">
 								<dt class="font-medium">Advanced Trails:</dt>
 								<dd>{area.data.trailPctAdvanced}%</dd>
+							</div>
+						)}
+						{area.data.trailPctExpert != null && (
+							<div class="flex justify-between">
+								<dt class="font-medium">Expert Trails:</dt>
+								<dd>{area.data.trailPctExpert}%</dd>
 							</div>
 						)}
 					</dl>

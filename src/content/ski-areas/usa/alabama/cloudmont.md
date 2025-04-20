@@ -1,5 +1,5 @@
 ---
-annualSnowfall: '1'
+annualSnowfall: N/A
 country: USA
 mountain: Cloudmont
 openToPublic: 'Yes'

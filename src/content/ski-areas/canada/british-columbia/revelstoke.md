@@ -1,5 +1,5 @@
 ---
-annualSnowfall: '1'
+annualSnowfall: N/A
 country: Canada
 mountain: Revelstoke
 openToPublic: 'Yes'

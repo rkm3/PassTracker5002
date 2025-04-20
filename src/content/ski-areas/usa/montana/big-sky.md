@@ -50,6 +50,6 @@ Big Sky also recently announced a new, two-stage gondola, which will replace the
 
 | Ski Area | Time |
 |----------|----------|
-|    [Bridger Bowl](@bridger-bowl)      | 1:30          |
 |    [Yellowstone Club](@yellowstone-club) | Ski-to connection |
 |    [Bear Canyon](@bear-canyon)        | 1:20 (private)    |
+|    [Bridger Bowl](@bridger-bowl)      | 1:30          |
