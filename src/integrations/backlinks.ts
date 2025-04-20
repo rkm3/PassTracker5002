@@ -56,7 +56,7 @@ export default function backlinks(options?: BacklinksIntegrationOptions): AstroI
       // Store original ending slash info before normalizing
       const originalEndsWithSlash = pathname.endsWith('/');
       // Normalize (removes base, handles trailing slash, decodes)
-      const normalizedPath = normalizeUrlPath(pathname); // e.g., /countries/usa/wyoming or /
+      let normalizedPath = normalizeUrlPath(pathname); // e.g., /countries/usa/wyoming or /
 
       // Remove leading slash for joining
       let relativePath = normalizedPath.startsWith('/') ? normalizedPath.substring(1) : normalizedPath; // e.g., countries/usa/wyoming or ""
@@ -149,11 +149,6 @@ export default function backlinks(options?: BacklinksIntegrationOptions): AstroI
             const sourcePathname = '/' + relativePath;
             let sourceCanonicalUrl = normalizeUrlPath(sourcePathname);
 
-            // Normalize /usa/ to /us/
-            if (sourceCanonicalUrl.startsWith('/ski-areas/usa/')) {
-                sourceCanonicalUrl = sourceCanonicalUrl.replace('/ski-areas/usa/', '/ski-areas/us/');
-            }
-
             try {
               const htmlContent = await fs.readFile(sourceAbsoluteFilePath, 'utf-8');
               const $ = cheerio.load(htmlContent);
@@ -184,12 +179,6 @@ export default function backlinks(options?: BacklinksIntegrationOptions): AstroI
                    if (potentialTargetFilePath && builtFilePathsSet.has(path.normalize(potentialTargetFilePath))) { // Normalize for comparison
                     let targetCanonicalUrl = normalizeUrlPath(resolvedPathname);
 
-                    // Normalize /usa/ to /us/
-                    if (targetCanonicalUrl.startsWith('/ski-areas/usa/')) {
-                        targetCanonicalUrl = targetCanonicalUrl.replace('/ski-areas/usa/', '/ski-areas/us/');
-                    }
-
-
                     // Safety check: Ensure we have valid url and title
                     if (typeof sourceCanonicalUrl !== 'string' || typeof sourceTitle !== 'string') {
                         console.warn(`[backlinks] Skipping backlink due to invalid source data. Source URL: ${sourceCanonicalUrl}, Source Title: ${sourceTitle}, Target URL: ${targetCanonicalUrl}`);
@@ -217,7 +206,7 @@ export default function backlinks(options?: BacklinksIntegrationOptions): AstroI
         // --- Finalize: Convert Map to JSON and Write ---
         console.log('[backlinks] Finalizing backlinks...');
         // Add /countries/usa to the exclusion set
-        const excludedUrls = new Set(['/', '/countries', '/ski-areas/usa', '/owners', '/resorts', '/countries/usa']);
+        const excludedUrls = new Set(['/', '/countries', '/owners', '/resorts', '/countries/usa']);
         // Update output type
         const backlinksOutput: Record<string, BacklinkEntry[]> = {};
          for (const [targetUrl, sourceEntriesMap] of backlinksMap.entries()) {

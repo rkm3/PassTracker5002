@@ -1,0 +1,21 @@
+---
+annualSnowfall: N/A
+country: USA
+mountain: Powderhouse Hill
+openToPublic: 'Yes'
+owner: Independent
+passAffiliations: ''
+skiableAcres: ''
+skied: 'No'
+state: Maine
+surfaceLiftsOnly: 'Yes'
+verticalDrop: '175'
+operated:
+  '2324': true
+  '2425': true
+---
+
+
+# Powderhouse Hill
+
+Located in U.S. - Maine, Powderhouse Hill is a ski area with a vertical drop of 175 feet and N/A skiable acres.
