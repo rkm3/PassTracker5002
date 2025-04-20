@@ -194,7 +194,7 @@ const operatedSeasons = {
 				<a href={`${baseUrl}/ski-areas/${area.data.country === 'U.S.' ? 'us' : area.data.country.toLowerCase().replace(/\./g, '').replace(/\s+/g, '-')}/${area.data.state.toLowerCase().replace(/\s+/g, '-')}`} class="text-blue-600 hover:underline">{area.data.state}</a>
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
 				<div>
 					<h2 class="text-xl font-semibold mb-4">Mountain Stats</h2>
 					<dl class="space-y-2">
@@ -232,9 +232,15 @@ const operatedSeasons = {
 							<dt class="font-medium">Pass Affiliations:</dt>
 							<dd set:html={processPassAffiliations(area.data.passAffiliations)}></dd>
 						</div>
+					</dl>
+				</div>
+
+				<div>
+					<h2 class="text-xl font-semibold mb-4">Operating History</h2>
+					<dl class="space-y-2">
 						{Object.entries(operatedSeasons).sort(([a], [b]) => b.localeCompare(a)).map(([season, isOperating]) => (
 							<div class="flex justify-between">
-								<dt class="font-medium">Operated {`${season.substring(0, 2)}-${season.substring(2, 4)}`}:</dt>
+								<dt class="font-medium">{`${season.substring(0, 2)}-${season.substring(2, 4)}`}:</dt>
 								<dd>{isOperating ? 'Yes' : 'No'}</dd>
 							</div>
 						))}

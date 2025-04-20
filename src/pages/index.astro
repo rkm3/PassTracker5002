@@ -4,8 +4,8 @@ import { getCollection } from 'astro:content';
 
 const skiAreas = await getCollection('ski-areas');
 skiAreas.sort((a, b) => {
-	// First sort by country
-	const countryCompare = a.data.country.localeCompare(b.data.country);
+	// First sort by country (reverse sort puts USA at the top)
+	const countryCompare = -a.data.country.localeCompare(b.data.country);
 	if (countryCompare !== 0) return countryCompare;
 	// Then by state
 	const stateCompare = a.data.state.localeCompare(b.data.state);
