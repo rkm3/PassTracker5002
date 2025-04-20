@@ -23,6 +23,7 @@ const skiAreas = defineCollection({
 		trailPctBeginner: z.number().nullable().optional(),
 		trailPctIntermediate: z.number().nullable().optional(),
 		trailPctAdvanced: z.number().nullable().optional(),
+		trailPctExpert: z.number().nullable().optional(),
 		liftCount: z.number().nullable().optional(),
 	}),
 });

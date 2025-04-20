@@ -8,4 +8,4 @@ tags: []
 changefreq: monthly
 ---
 
-<!-- Add post content below -->
+[Big Sky](@big-sky)

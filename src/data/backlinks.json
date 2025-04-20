@@ -8995,6 +8995,10 @@
   ],
   "/ski-areas/usa/montana/bear-canyon": [
     {
+      "url": "/ski-areas/usa/montana/big-sky",
+      "title": "Big Sky"
+    },
+    {
       "url": "/ski-areas/usa/montana",
       "title": "Ski Areas in Montana, USA"
     },
@@ -9085,6 +9089,10 @@
   ],
   "/ski-areas/usa/montana/big-sky": [
     {
+      "url": "/posts/big-sky-to-build-new-lone-peak-tram",
+      "title": "Big Sky To Build New Lone Peak Tram"
+    },
+    {
       "url": "/owners/boyne-resorts",
       "title": "Boyne Resorts"
     },
@@ -9115,6 +9123,14 @@
     {
       "url": "/passes/2025-26/mountain-collective-2025-26",
       "title": "Mountain Collective 2025-26"
+    },
+    {
+      "url": "/posts/podcast-159-big-sky-general-manager",
+      "title": "Podcast 159 Big Sky General Manager"
+    },
+    {
+      "url": "/posts/podcast-81-big-sky-president-and",
+      "title": "Podcast 81 Big Sky President And"
     },
     {
       "url": "/ski-areas/usa/montana",
@@ -9322,6 +9338,10 @@
     }
   ],
   "/ski-areas/usa/montana/yellowstone-club": [
+    {
+      "url": "/ski-areas/usa/montana/big-sky",
+      "title": "Big Sky"
+    },
     {
       "url": "/ski-areas/usa/montana",
       "title": "Ski Areas in Montana, USA"
@@ -14683,6 +14703,10 @@
   ],
   "/countries/canada/british-columbia": [
     {
+      "url": "/ski-areas/canada/british-columbia/revelstoke",
+      "title": "Revelstoke"
+    },
+    {
       "url": "/countries/canada",
       "title": "Ski Areas in Canada"
     },
@@ -17777,13 +17801,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/2023-24-ski-season-preview-part-i": [
+  "/posts/2023-24-ski-season-preview-part-ii": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/2023-24-ski-season-preview-part-ii": [
+  "/posts/2023-24-ski-season-preview-part-i": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -18069,6 +18093,10 @@
     {
       "url": "/posts",
       "title": "All Posts"
+    },
+    {
+      "url": "/ski-areas/usa/montana/big-sky",
+      "title": "Big Sky"
     }
   ],
   "/posts/mountain-capital-partners-says-more": [
@@ -18773,13 +18801,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-105-sundance-mountain-president": [
+  "/posts/podcast-108-vail-mountain-vice-president": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-108-vail-mountain-vice-president": [
+  "/posts/podcast-105-sundance-mountain-president": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -18869,25 +18897,19 @@
       "title": "All Posts"
     }
   ],
-  "/posts/park-city-locals-will-be-able-to": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
   "/posts/pacific-group-resorts-wins-auction": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-100-nubs-nob-general-manager": [
+  "/posts/park-city-locals-will-be-able-to": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-98-colorado-sun-reporter": [
+  "/posts/podcast-100-nubs-nob-general-manager": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -18900,6 +18922,12 @@
     }
   ],
   "/posts/podcast-97-pats-peak-general-manager": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
+  "/posts/podcast-98-colorado-sun-reporter": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19151,13 +19179,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-90-vail-resorts-rocky-mountain": [
+  "/posts/podcast-91-snow-partners-big-snow": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-91-snow-partners-big-snow": [
+  "/posts/podcast-90-vail-resorts-rocky-mountain": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19205,7 +19233,7 @@
       "title": "All Posts"
     }
   ],
-  "/posts/2022-23-indy-pass-prices-stay-flat": [
+  "/posts/2022-23-mountain-collective-shakeup": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19217,13 +19245,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/2022-23-mountain-collective-shakeup": [
+  "/posts/2022-23-season-pass-sales-begin-heres": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/2022-23-season-pass-sales-begin-heres": [
+  "/posts/2022-23-indy-pass-prices-stay-flat": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19251,6 +19279,10 @@
     {
       "url": "/posts",
       "title": "All Posts"
+    },
+    {
+      "url": "/ski-areas/usa/montana/big-sky",
+      "title": "Big Sky"
     }
   ],
   "/posts/boxed-in-and-maxed-out-crystal-mountain": [
@@ -19337,12 +19369,6 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-69-hickory-ski-center-new": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
   "/posts/podcast-70-timberline-lodge-oregon": [
     {
       "url": "/posts",
@@ -19362,6 +19388,12 @@
     }
   ],
   "/posts/podcast-73-tamarack-idaho-president": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
+  "/posts/podcast-69-hickory-ski-center-new": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19409,13 +19441,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-81-big-sky-president-and": [
+  "/posts/podcast-82-arapahoe-basin-chief-operating": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-82-arapahoe-basin-chief-operating": [
+  "/posts/podcast-81-big-sky-president-and": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19673,13 +19705,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-51-alpine-x-ceo-john-emery": [
+  "/posts/podcast-50-caberfae-peaks-michigan": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-50-caberfae-peaks-michigan": [
+  "/posts/podcast-51-alpine-x-ceo-john-emery": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19703,13 +19735,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-55-china-peak-california": [
+  "/posts/podcast-56-mt-buller-australia-gm": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-56-mt-buller-australia-gm": [
+  "/posts/podcast-55-china-peak-california": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19721,13 +19753,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-58-crystal-mountain-washington": [
+  "/posts/podcast-59-ski-cooper-president-and": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-59-ski-cooper-president-and": [
+  "/posts/podcast-58-crystal-mountain-washington": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19823,13 +19855,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/11-great-northeast-ski-season-passes": [
+  "/posts/10-moments-that-redefined-northeast": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/10-moments-that-redefined-northeast": [
+  "/posts/11-great-northeast-ski-season-passes": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19877,13 +19909,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/covid-19-and-skiing-podcast-11-schweitzer": [
+  "/posts/covid-19-and-skiing-podcast-12-ski": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/covid-19-and-skiing-podcast-12-ski": [
+  "/posts/covid-19-and-skiing-podcast-11-schweitzer": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19955,7 +19987,7 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-35-bolton-valley-president": [
+  "/posts/podcast-34-gunstock-president-and": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19967,7 +19999,7 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-34-gunstock-president-and": [
+  "/posts/podcast-35-bolton-valley-president": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -19997,6 +20029,12 @@
       "title": "All Posts"
     }
   ],
+  "/posts/podcast-43-nsaa-president-and-ceo": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
   "/posts/podcast-44-west-mountain-ny-ownersoperators": [
     {
       "url": "/posts",
@@ -20004,12 +20042,6 @@
     }
   ],
   "/posts/podcast-45-indy-pass-president-and": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
-  "/posts/podcast-43-nsaa-president-and-ceo": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20051,13 +20083,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/the-five-types-of-northeast-ski-season": [
+  "/posts/the-lift-queue-for-the-blue-bird": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/the-lift-queue-for-the-blue-bird": [
+  "/posts/the-five-types-of-northeast-ski-season": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20129,13 +20161,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-33-powder-magazine-editor": [
+  "/posts/podcast-32-hermitage-club-general": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-32-hermitage-club-general": [
+  "/posts/podcast-33-powder-magazine-editor": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20195,13 +20227,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-27-jay-peak-president-and": [
+  "/posts/podcast-28-sugarbush-president-and": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-28-sugarbush-president-and": [
+  "/posts/podcast-27-jay-peak-president-and": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20213,13 +20245,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-31-bousquet-owners-and-management": [
+  "/posts/podcast-30-saddleback-gm-and-ceo": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-30-saddleback-gm-and-ceo": [
+  "/posts/podcast-31-bousquet-owners-and-management": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20315,13 +20347,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/58-northeast-ski-areas-now-offer": [
+  "/posts/5-lessons-from-1990s-ski-magazines": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/5-lessons-from-1990s-ski-magazines": [
+  "/posts/58-northeast-ski-areas-now-offer": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20387,25 +20419,25 @@
       "title": "All Posts"
     }
   ],
-  "/posts/bring-your-own-toilet-paper-why-the": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
   "/posts/boyne-to-include-ikon-base-pass-with": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/covid-19-and-skiing-podcast-10-nsaa": [
+  "/posts/bring-your-own-toilet-paper-why-the": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
   "/posts/covid-19-and-skiing-podcast-1-author": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
+  "/posts/covid-19-and-skiing-podcast-10-nsaa": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20447,13 +20479,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/covid-19-and-skiing-podcast-9-alterra": [
+  "/posts/covid-19-and-skiing-podcast-8-mt": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/covid-19-and-skiing-podcast-8-mt": [
+  "/posts/covid-19-and-skiing-podcast-9-alterra": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20603,19 +20635,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/north-american-ski-industry-nears": [
-    {
-      "url": "/posts",
-      "title": "All Posts"
-    }
-  ],
   "/posts/northeast-mountains-push-pass-deadlines": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/on-the-chairlift-at-killington": [
+  "/posts/north-american-ski-industry-nears": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20628,6 +20654,12 @@
     }
   ],
   "/posts/overheard-at-the-new-jersey-snow": [
+    {
+      "url": "/posts",
+      "title": "All Posts"
+    }
+  ],
+  "/posts/on-the-chairlift-at-killington": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20687,13 +20719,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-20-mountain-gazette-owner": [
+  "/posts/podcast-2-danielle-and-laszlo-vajtay": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/podcast-2-danielle-and-laszlo-vajtay": [
+  "/posts/podcast-20-mountain-gazette-owner": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20801,13 +20833,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/the-10-people-you-meet-on-the-ski": [
+  "/posts/the-5-year-old-who-ran-the-mountain": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/the-5-year-old-who-ran-the-mountain": [
+  "/posts/the-10-people-you-meet-on-the-ski": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -20927,13 +20959,13 @@
       "title": "All Posts"
     }
   ],
-  "/posts/why-the-vail-fan-clubs-membership": [
+  "/posts/why-plattekill-could-become-king": [
     {
       "url": "/posts",
       "title": "All Posts"
     }
   ],
-  "/posts/why-plattekill-could-become-king": [
+  "/posts/why-the-vail-fan-clubs-membership": [
     {
       "url": "/posts",
       "title": "All Posts"
@@ -21107,6 +21139,10 @@
       "title": "Pico"
     },
     {
+      "url": "/ski-areas/canada/british-columbia/revelstoke",
+      "title": "Revelstoke"
+    },
+    {
       "url": "/ski-areas/usa/california/snow-valley",
       "title": "Snow Valley"
     },
@@ -21183,6 +21219,10 @@
     {
       "url": "/ski-areas/usa/vermont/pico",
       "title": "Pico"
+    },
+    {
+      "url": "/ski-areas/canada/british-columbia/revelstoke",
+      "title": "Revelstoke"
     },
     {
       "url": "/ski-areas/usa/california/snow-valley",
@@ -21451,6 +21491,10 @@
       "title": "Palisades Tahoe"
     },
     {
+      "url": "/ski-areas/canada/british-columbia/revelstoke",
+      "title": "Revelstoke"
+    },
+    {
       "url": "/ski-areas/usa/vermont/sugarbush",
       "title": "Sugarbush"
     },
@@ -21687,6 +21731,10 @@
       "title": "Pico"
     },
     {
+      "url": "/ski-areas/canada/british-columbia/revelstoke",
+      "title": "Revelstoke"
+    },
+    {
       "url": "/ski-areas/usa/idaho/schweitzer",
       "title": "Schweitzer"
     },
@@ -21809,6 +21857,10 @@
       "title": "Pico"
     },
     {
+      "url": "/ski-areas/canada/british-columbia/revelstoke",
+      "title": "Revelstoke"
+    },
+    {
       "url": "/ski-areas/usa/idaho/schweitzer",
       "title": "Schweitzer"
     },
@@ -21929,6 +21981,10 @@
     {
       "url": "/ski-areas/usa/vermont/pico",
       "title": "Pico"
+    },
+    {
+      "url": "/ski-areas/canada/british-columbia/revelstoke",
+      "title": "Revelstoke"
     },
     {
       "url": "/ski-areas/usa/idaho/schweitzer",

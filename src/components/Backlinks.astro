@@ -40,6 +40,10 @@ const normalizeUrlPath = (rawPathname: string, basePath: string): string => {
 const getBacklinkType = (url: string): string => {
     if (url.startsWith('/owners/')) return 'Owners';
     if (url.startsWith('/ski-areas/')) return 'Ski Areas';
+    // Check for seasonal passes first
+    if (url.startsWith('/passes/2024-25/')) return 'Passes 2024-25';
+    if (url.startsWith('/passes/2025-26/')) return 'Passes 2025-26';
+    // Generic passes fallback
     if (url.startsWith('/passes/')) return 'Passes';
     if (url.startsWith('/posts/')) return 'Storm Posts';
     if (url.startsWith('/countries/')) return 'Countries';
@@ -110,7 +114,7 @@ for (const entry of referringPages) {
 }
 
 // Define preferred order for sections
-const typeOrder = ['Owners', 'Ski Areas', 'Passes', 'Storm Posts', 'Other Pages']; // Renamed 'Blog Posts' to 'Storm Posts' for consistency
+const typeOrder = ['Storm Posts', 'Passes', 'Passes 2025-26', 'Passes 2024-25', 'Owners', 'Ski Areas', 'Other Pages']; // Added seasonal passes
 
 // Sort the grouped backlinks based on the preferred order
 const sortedGroupedBacklinks = Object.entries(groupedBacklinks).sort(([typeA], [typeB]) => {
@@ -152,26 +156,29 @@ const formatDate = (dateString: string | undefined): string | null => {
 {showBacklinks && (
   <div class="mt-12 pt-8 border-t border-gray-200">
     <h2 class="text-2xl font-semibold mb-6">Links to this Page</h2>
-    {sortedGroupedBacklinks.map(([type, entries]) => (
-      <div class="mb-6 last:mb-0"> {/* Add margin between sections */}
-        <h3 class="text-xl font-medium mb-3">{type} ({entries.length})</h3> {/* Show count */}
-        <ul class="list-disc list-inside space-y-2">
-          {entries.map((entry: BacklinkEntry) => {
-            const isPost = entry.url.startsWith('/posts/');
-            const pubDate = isPost ? postPubDates[entry.url] : undefined;
-            const formattedDate = formatDate(pubDate);
-            return (
-              <li>
-                <a href={`${baseHref}${entry.url.startsWith('/') ? entry.url.substring(1) : entry.url}`} class="text-blue-600 hover:underline">{entry.title}</a>
-                {/* Display formatted date if it exists */}
-                {formattedDate && (
-                  <span class="text-sm text-gray-500 ml-2">{formattedDate}</span>
-                )}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    ))}
+    {/* Wrap the mapped sections in a grid container */}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {sortedGroupedBacklinks.map(([type, entries]) => (
+        <div class="mb-6"> {/* Removed last:mb-0 as grid gap handles spacing */}
+          <h3 class="text-xl font-medium mb-3">{type} ({entries.length})</h3> {/* Show count */}
+          <ul class="list-disc list-inside space-y-2">
+            {entries.map((entry: BacklinkEntry) => {
+              const isPost = entry.url.startsWith('/posts/');
+              const pubDate = isPost ? postPubDates[entry.url] : undefined;
+              const formattedDate = formatDate(pubDate);
+              return (
+                <li>
+                  <a href={`${baseHref}${entry.url.startsWith('/') ? entry.url.substring(1) : entry.url}`} class="text-blue-600 hover:underline">{entry.title}</a>
+                  {/* Display formatted date if it exists */}
+                  {formattedDate && (
+                    <span class="text-sm text-gray-500 ml-2">{formattedDate}</span>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ))}
+    </div> {/* Close grid container */}
   </div>
 )}
