@@ -17,3 +17,9 @@ state: Montana
 # Big Sky
 
 Located in U.S. - Montana, Big Sky is a ski area with a vertical drop of 4,350 feet and 5,800 skiable acres.
+
+## Closest Ski Areas
+
+| Ski Area | Distance |
+|----------|----------|
+|    [Bridger Bowl](@bridger-bowl)      | 60 miles          |
