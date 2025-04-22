@@ -46,4 +46,4 @@ Add frontmatter to all of a type
 
 - Usage: `node scripts/add-frontmatter-field.js <directoryPath> <fieldName> <defaultValue>`
 
-example `node scripts/add-frontmatter-field.js src/content/ski-areas elevationBase ''`
+example `node scripts/add-frontmatter-field.js src/content/ski-areas elevationBase ''`.
